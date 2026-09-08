@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
+import { BenefitsGrid } from "@/components/BenefitsGrid";
 
 export const metadata: Metadata = {
   title: "Over mij",
@@ -13,7 +14,7 @@ export default function OverMijPage() {
     <>
       <SiteHeader />
       <main>
-        <section style={{ padding: "56px 0 72px" }}>
+        <section style={{ padding: "56px 0 64px" }}>
           <div className="wrap" style={{ maxWidth: 680 }}>
             <span className="eyebrow">Over mij</span>
             <h1 style={{ fontSize: 40, marginTop: 10 }}>[Naam] — websites voor coaches</h1>
@@ -32,6 +33,16 @@ export default function OverMijPage() {
                 Plan een gratis kennismaking
               </Link>
             </div>
+          </div>
+        </section>
+
+        <section style={{ padding: "24px 0 72px", background: "oklch(93% 0.03 148 / 0.25)" }}>
+          <div className="wrap">
+            <div style={{ maxWidth: 620, marginBottom: 36 }}>
+              <span className="eyebrow">Waarom</span>
+              <h2 style={{ fontSize: 28, marginTop: 10 }}>Wat je van mij mag verwachten</h2>
+            </div>
+            <BenefitsGrid />
           </div>
         </section>
       </main>

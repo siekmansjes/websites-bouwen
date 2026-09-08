@@ -2,9 +2,7 @@ import Link from "next/link";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Hero } from "@/components/Hero";
-import { ProblemSection } from "@/components/ProblemSection";
-import { ProcessTimeline } from "@/components/ProcessTimeline";
-import { BenefitsGrid } from "@/components/BenefitsGrid";
+import { ProcessPreview } from "@/components/ProcessPreview";
 import { CaseStudyCard } from "@/components/CaseStudyCard";
 import { PackageCard } from "@/components/PackageCard";
 import { caseStudies } from "@/lib/cases";
@@ -16,42 +14,12 @@ export default function Home() {
       <SiteHeader />
       <main>
         <Hero />
-        <ProblemSection />
 
-        <section className="ink-band" style={{ padding: "64px 0" }}>
-          <div className="wrap">
-            <div style={{ textAlign: "center", maxWidth: 620, margin: "0 auto 44px" }}>
-              <span className="eyebrow" style={{ color: "oklch(93% 0.03 148)" }}>
-                Hoe het werkt
-              </span>
-              <h2 style={{ fontSize: 34, marginTop: 10 }}>Van kennismaking tot livegang</h2>
-            </div>
-            <div style={{ maxWidth: 640, margin: "0 auto" }}>
-              <ProcessTimeline />
-            </div>
-            <div style={{ textAlign: "center", marginTop: 40 }}>
-              <Link href="/proces" className="btn btn-secondary" style={{ borderColor: "oklch(98% 0.004 90)", color: "oklch(98% 0.004 90)" }}>
-                Bekijk het volledige proces
-              </Link>
-            </div>
-          </div>
-        </section>
-
-        <section style={{ padding: "72px 0" }}>
-          <div className="wrap">
-            <div style={{ textAlign: "center", maxWidth: 620, margin: "0 auto 44px" }}>
-              <span className="eyebrow">Waarom</span>
-              <h2 style={{ fontSize: 34, marginTop: 10 }}>Wat je van mij mag verwachten</h2>
-            </div>
-            <BenefitsGrid />
-          </div>
-        </section>
-
-        <section style={{ padding: "72px 0", background: "oklch(93% 0.03 148 / 0.3)" }}>
+        <section style={{ padding: "24px 0 72px" }}>
           <div className="wrap">
             <div style={{ textAlign: "center", maxWidth: 620, margin: "0 auto 44px" }}>
               <span className="eyebrow">Cases</span>
-              <h2 style={{ fontSize: 34, marginTop: 10 }}>Voorbeelden van trajecten</h2>
+              <h2 style={{ fontSize: 34, marginTop: 10 }}>Zo ziet dat er in de praktijk uit</h2>
               <p style={{ fontSize: 14.5, color: "oklch(52% 0.012 265)", marginTop: 12 }}>
                 Deze cases zijn illustratief en worden binnenkort vervangen door echte klantverhalen.
               </p>
@@ -61,6 +29,18 @@ export default function Home() {
                 <CaseStudyCard key={caseStudy.slug} caseStudy={caseStudy} />
               ))}
             </div>
+          </div>
+        </section>
+
+        <section className="ink-band" style={{ padding: "64px 0" }}>
+          <div className="wrap">
+            <div style={{ textAlign: "center", maxWidth: 620, margin: "0 auto 44px" }}>
+              <span className="eyebrow" style={{ color: "oklch(93% 0.03 148)" }}>
+                Hoe het werkt
+              </span>
+              <h2 style={{ fontSize: 34, marginTop: 10 }}>Van kennismaking tot livegang</h2>
+            </div>
+            <ProcessPreview />
           </div>
         </section>
 
