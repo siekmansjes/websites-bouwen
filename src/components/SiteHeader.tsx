@@ -53,6 +53,9 @@ export function SiteHeader() {
             className="nav-links"
             style={{ display: "flex", alignItems: "center", gap: 24, fontSize: 14, fontWeight: 500 }}
           >
+            <Link href="/" className="nav-link" style={{ color: "oklch(21% 0.015 265)" }}>
+              Home
+            </Link>
             <Link href="/cases" className="nav-link" style={{ color: "oklch(21% 0.015 265)" }}>
               Cases
             </Link>
