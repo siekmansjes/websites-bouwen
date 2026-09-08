@@ -17,15 +17,21 @@ export default function OverMijPage() {
         <section style={{ padding: "56px 0 64px" }}>
           <div className="wrap" style={{ maxWidth: 680 }}>
             <span className="eyebrow">Over mij</span>
-            <h1 style={{ fontSize: 40, marginTop: 10 }}>[Naam] — websites voor MKB&apos;ers</h1>
+            <h1 style={{ fontSize: 40, marginTop: 10 }}>Mark — websites voor MKB&apos;ers</h1>
             <div style={{ display: "flex", flexDirection: "column", gap: 20, marginTop: 24 }}>
               <p style={{ fontSize: 15.5, lineHeight: 1.7, color: "oklch(21% 0.015 265)" }}>
-                [Hier komt een persoonlijke introductie: achtergrond, waarom voor deze manier van werken
-                gekozen is, en wat de aanpak onderscheidt van een algemeen webbureau.]
+                Voordat ik websites voor anderen bouwde, bouwde ik ze voor mezelf. Met Parkmade lever ik
+                bedrukte merchandise en verkoopdisplays aan meer dan 15 vakantieparken, en eerder werkte ik
+                als merchandise-professional voor onder meer de Efteling en grote retailers als Jumbo en
+                Albert Heijn. Die achtergrond leerde me wat een website voor een klein bedrijf eigenlijk moet
+                doen. Niet mooi zijn om mooi te zijn, maar aanvragen opleveren en tijd schelen. Precies dat
+                neem ik mee naar elk traject dat ik voor een klant bouw.
               </p>
               <p style={{ fontSize: 15.5, lineHeight: 1.7, color: "oklch(21% 0.015 265)" }}>
-                [Ruimte voor een korte alinea over werkwijze: bijvoorbeeld dat er bewust wordt samengewerkt
-                met een klein aantal klanten tegelijk, zodat er echt tijd is voor persoonlijke aandacht.]
+                Ik werk bewust met een beperkt aantal klanten tegelijk, zodat er echt tijd is voor
+                persoonlijke aandacht. Geen ontwerp uit een sjabloon, maar een site die past bij hoe jij werkt
+                en wat jouw klanten nodig hebben. Ik begin met coaches als doelgroep, en breid van daaruit uit
+                naar andere MKB&apos;ers.
               </p>
             </div>
             <div style={{ marginTop: 40 }}>
