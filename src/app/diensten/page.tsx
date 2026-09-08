@@ -8,7 +8,7 @@ import { addons } from "@/lib/addons";
 
 export const metadata: Metadata = {
   title: "Diensten",
-  description: "Pakketten en losse automatiseringsopties voor je coachwebsite.",
+  description: "Pakketten en losse automatiseringsopties voor je website.",
 };
 
 export default function DienstenPage() {

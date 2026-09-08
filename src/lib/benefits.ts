@@ -17,11 +17,11 @@ export const benefits: Benefit[] = [
   {
     title: "Automatisering waar het scheelt",
     description:
-      "Intake, agenda en opvolging kunnen automatisch verlopen, zodat jij minder tijd kwijt bent aan administratie en meer tijd hebt voor coachen.",
+      "Intake, agenda en opvolging kunnen automatisch verlopen, zodat jij minder tijd kwijt bent aan administratie en meer tijd hebt voor je vak.",
   },
   {
-    title: "Meegroeien met je praktijk",
+    title: "Meegroeien met je bedrijf",
     description:
-      "Begin met wat je nu nodig hebt en breid later uit — nieuwe pagina's, extra automatiseringen of een tweede coach toevoegen kan altijd.",
+      "Begin met wat je nu nodig hebt en breid later uit — nieuwe pagina's, extra automatiseringen of een nieuw teamlid toevoegen kan altijd.",
   },
 ];

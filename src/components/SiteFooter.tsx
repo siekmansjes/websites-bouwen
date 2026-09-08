@@ -18,7 +18,7 @@ export function SiteFooter() {
         <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
           <span style={{ fontFamily: "var(--font-fraunces), serif", fontWeight: 700, fontSize: 18 }}>{SITE_NAME}</span>
           <p style={{ fontSize: 14, lineHeight: 1.6, color: "oklch(52% 0.012 265)", maxWidth: 260 }}>
-            Websites voor coaches die bezoekers helpen de stap naar een eerste gesprek te zetten.
+            Websites voor MKB&apos;ers die bezoekers helpen de stap naar een eerste gesprek te zetten.
           </p>
         </div>
 

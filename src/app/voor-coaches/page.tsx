@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
@@ -5,19 +6,28 @@ import { Hero } from "@/components/Hero";
 import { ProcessPreview } from "@/components/ProcessPreview";
 import { CaseStudyCard } from "@/components/CaseStudyCard";
 import { PackageCard } from "@/components/PackageCard";
-import { caseStudies } from "@/lib/cases";
+import { getCasesByAudience } from "@/lib/cases";
 import { packages } from "@/lib/packages";
 import { addons } from "@/lib/addons";
+import { SITE_NAME } from "@/lib/site";
 
-export default function Home() {
+export const metadata: Metadata = {
+  title: `${SITE_NAME} — websites voor coaches`,
+  description:
+    "Websites voor loopbaan- en persoonlijke coaches die bezoekers helpen de stap naar een eerste gesprek te zetten, met automatisering waar het scheelt.",
+};
+
+export default function VoorCoachesPage() {
+  const coachCases = getCasesByAudience("coaches");
+
   return (
     <>
       <SiteHeader />
       <main>
         <Hero
-          eyebrow="Websites voor MKB'ers"
+          eyebrow="Websites voor coaches"
           title="Een website die mensen helpt de stap naar jou te zetten"
-          description="Een heldere website met een duidelijk proces, eerlijke pakketten en automatisering die je tijd scheelt — zodat jij je kan focussen op je bedrijf in plaats van op administratie."
+          description="Voor loopbaan- en persoonlijke coaches: een heldere website met een duidelijk proces, eerlijke pakketten en automatisering die je scheelt in administratie — zodat jij weer tijd hebt om te coachen."
         />
 
         <section id="cases" style={{ padding: "24px 0 72px" }}>
@@ -30,7 +40,7 @@ export default function Home() {
               </p>
             </div>
             <div className="grid-3">
-              {caseStudies.map((caseStudy) => (
+              {coachCases.map((caseStudy) => (
                 <CaseStudyCard key={caseStudy.slug} caseStudy={caseStudy} />
               ))}
             </div>
@@ -53,7 +63,7 @@ export default function Home() {
           <div className="wrap">
             <div style={{ textAlign: "center", maxWidth: 620, margin: "0 auto 44px" }}>
               <span className="eyebrow">Pakketten</span>
-              <h2 style={{ fontSize: 34, marginTop: 10 }}>Kies wat bij je bedrijf past</h2>
+              <h2 style={{ fontSize: 34, marginTop: 10 }}>Kies wat bij je praktijk past</h2>
             </div>
             <div className="grid-3">
               {packages.map((pkg) => (
@@ -92,7 +102,7 @@ export default function Home() {
           <div className="wrap">
             <h2 style={{ fontSize: 32, marginBottom: 16 }}>Klaar voor een website die voor je werkt?</h2>
             <p style={{ fontSize: 15, color: "oklch(93% 0.03 148)", marginBottom: 28, maxWidth: 480, marginLeft: "auto", marginRight: "auto" }}>
-              Plan een gratis, vrijblijvende kennismaking — dan bekijken we samen wat bij jouw bedrijf past.
+              Plan een gratis, vrijblijvende kennismaking — dan bekijken we samen wat bij jouw praktijk past.
             </p>
             <Link href="/contact" className="btn btn-primary">
               Plan een gratis kennismaking

@@ -6,6 +6,8 @@ export type CaseStudy = {
   solution: string;
   result: string;
   image: string;
+  /** Doelgroep-label, gebruikt om cases te filteren op een doelgroep-landingspagina (bv. "coaches"). */
+  audience: string;
   /** Markeert deze case als voorbeeldcontent — nog te vervangen door een echte case. */
   isExample: true;
 };
@@ -13,6 +15,7 @@ export type CaseStudy = {
 export const caseStudies: CaseStudy[] = [
   {
     slug: "loopbaancoach-website-met-intake",
+    audience: "coaches",
     clientName: "[Voorbeeldklant] — Loopbaancoach",
     sector: "Loopbaancoaching",
     problem:
@@ -26,6 +29,7 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     slug: "persoonlijk-coach-zichtbaarheid",
+    audience: "coaches",
     clientName: "[Voorbeeldklant] — Persoonlijk coach",
     sector: "Coaching bij persoonlijke ontwikkeling",
     problem:
@@ -39,6 +43,7 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     slug: "coachpraktijk-met-automatisering",
+    audience: "coaches",
     clientName: "[Voorbeeldklant] — Coachpraktijk (2 coaches)",
     sector: "Loopbaan- en teamcoaching",
     problem:
@@ -51,3 +56,8 @@ export const caseStudies: CaseStudy[] = [
     isExample: true,
   },
 ];
+
+/** Cases voor een specifieke doelgroep-landingspagina (bv. "coaches"). */
+export function getCasesByAudience(audience: string): CaseStudy[] {
+  return caseStudies.filter((caseStudy) => caseStudy.audience === audience);
+}

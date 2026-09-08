@@ -6,7 +6,7 @@ import { BenefitsGrid } from "@/components/BenefitsGrid";
 
 export const metadata: Metadata = {
   title: "Over mij",
-  description: "Waarom ik me richt op websites voor coaches.",
+  description: "Waarom ik websites bouw voor MKB'ers.",
 };
 
 export default function OverMijPage() {
@@ -17,11 +17,11 @@ export default function OverMijPage() {
         <section style={{ padding: "56px 0 64px" }}>
           <div className="wrap" style={{ maxWidth: 680 }}>
             <span className="eyebrow">Over mij</span>
-            <h1 style={{ fontSize: 40, marginTop: 10 }}>[Naam] — websites voor coaches</h1>
+            <h1 style={{ fontSize: 40, marginTop: 10 }}>[Naam] — websites voor MKB&apos;ers</h1>
             <div style={{ display: "flex", flexDirection: "column", gap: 20, marginTop: 24 }}>
               <p style={{ fontSize: 15.5, lineHeight: 1.7, color: "oklch(21% 0.015 265)" }}>
-                [Hier komt een persoonlijke introductie: achtergrond, waarom de keuze voor coaches als
-                doelgroep, en wat de aanpak onderscheidt van een algemeen webbureau.]
+                [Hier komt een persoonlijke introductie: achtergrond, waarom voor deze manier van werken
+                gekozen is, en wat de aanpak onderscheidt van een algemeen webbureau.]
               </p>
               <p style={{ fontSize: 15.5, lineHeight: 1.7, color: "oklch(21% 0.015 265)" }}>
                 [Ruimte voor een korte alinea over werkwijze: bijvoorbeeld dat er bewust wordt samengewerkt

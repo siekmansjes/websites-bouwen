@@ -25,7 +25,7 @@ export const packages: PackageTier[] = [
     id: "groei",
     name: "Groei",
     priceLabel: "Vanaf €[PRIJS]",
-    tagline: "Voor coaches die actief nieuwe klanten willen werven.",
+    tagline: "Voor bedrijven die actief nieuwe klanten willen werven.",
     features: [
       "Alles uit Starter",
       "Tot 10 pagina's, incl. cases/blog",
@@ -39,12 +39,12 @@ export const packages: PackageTier[] = [
     id: "op-maat",
     name: "Op maat",
     priceLabel: "Op aanvraag",
-    tagline: "Voor een praktijk met specifieke wensen of meerdere coaches.",
+    tagline: "Voor een bedrijf met specifieke wensen of meerdere teamleden.",
     features: [
       "Alles uit Groei",
       "Volledig maatwerk ontwerp",
       "Koppelingen met je eigen CRM/tools",
-      "Meerdere coaches/agenda's",
+      "Meerdere teamleden/agenda's",
       "Doorlopende ondersteuning na livegang",
     ],
   },

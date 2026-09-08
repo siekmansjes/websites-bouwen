@@ -9,13 +9,13 @@ export const processSteps: ProcessStep[] = [
     step: 1,
     title: "Kennismaking",
     description:
-      "Een kort, vrijblijvend gesprek over je praktijk, je doelgroep en wat je met een nieuwe website wil bereiken. Hier bepalen we samen welk pakket en welke automatiseringen echt zinvol zijn voor jou.",
+      "Een kort, vrijblijvend gesprek over je bedrijf, je doelgroep en wat je met een nieuwe website wil bereiken. Hier bepalen we samen welk pakket en welke automatiseringen echt zinvol zijn voor jou.",
   },
   {
     step: 2,
     title: "Ontwerp",
     description:
-      "Ik werk een ontwerp uit dat past bij jouw manier van coachen — rustig en professioneel waar dat nodig is, persoonlijk waar dat past. We bepalen samen wat bij je past en wat je mooi vindt, bijvoorbeeld met een moodboard of voorbeelden van websites, en bespreken ook welke functionaliteiten je nodig hebt.",
+      "Ik werk een ontwerp uit dat past bij jouw manier van werken — rustig en professioneel waar dat nodig is, persoonlijk waar dat past. We bepalen samen wat bij je past en wat je mooi vindt, bijvoorbeeld met een moodboard of voorbeelden van websites, en bespreken ook welke functionaliteiten je nodig hebt.",
   },
   {
     step: 3,
@@ -39,6 +39,6 @@ export const processSteps: ProcessStep[] = [
     step: 6,
     title: "Nazorg",
     description:
-      "Ook na livegang kun je bij me terecht voor aanpassingen, uitbreidingen of nieuwe automatiseringen naarmate je praktijk groeit.",
+      "Ook na livegang kun je bij me terecht voor aanpassingen, uitbreidingen of nieuwe automatiseringen naarmate je bedrijf groeit.",
   },
 ];

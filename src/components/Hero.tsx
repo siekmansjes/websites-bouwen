@@ -1,18 +1,22 @@
 import Link from "next/link";
 
-export function Hero() {
+export function Hero({
+  eyebrow,
+  title,
+  description,
+}: {
+  eyebrow: string;
+  title: string;
+  description: string;
+}) {
   return (
     <section style={{ padding: "72px 0 88px" }}>
       <div className="wrap hero-row" style={{ display: "flex", alignItems: "center", gap: 56 }}>
         <div style={{ flex: 1.15, display: "flex", flexDirection: "column", gap: 22 }}>
-          <span className="eyebrow">Websites voor coaches</span>
-          <h1 style={{ fontSize: 52, color: "oklch(21% 0.015 265)" }}>
-            Een website die mensen helpt de stap naar jou te zetten
-          </h1>
+          <span className="eyebrow">{eyebrow}</span>
+          <h1 style={{ fontSize: 52, color: "oklch(21% 0.015 265)" }}>{title}</h1>
           <p style={{ fontSize: 17, lineHeight: 1.6, color: "oklch(52% 0.012 265)", maxWidth: 480 }}>
-            Voor loopbaan- en persoonlijke coaches: een heldere website met een duidelijk proces, eerlijke
-            pakketten en automatisering die je scheelt in administratie — zodat jij weer tijd hebt om te
-            coachen.
+            {description}
           </p>
           <div style={{ display: "flex", gap: 12, flexWrap: "wrap", marginTop: 6 }}>
             <Link href="/contact" className="btn btn-primary">

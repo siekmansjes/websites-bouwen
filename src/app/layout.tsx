@@ -16,9 +16,9 @@ const inter = Inter({
   weight: ["400", "500", "600", "700"],
 });
 
-const title = "[BEDRIJFSNAAM] — websites voor coaches";
+const title = "[BEDRIJFSNAAM] — websites voor MKB'ers";
 const description =
-  "Websites voor loopbaan- en persoonlijke coaches die bezoekers helpen de stap naar een eerste gesprek te zetten, met automatisering waar het scheelt.";
+  "Websites voor MKB'ers die bezoekers helpen de stap naar een eerste gesprek te zetten, met automatisering waar het scheelt.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
