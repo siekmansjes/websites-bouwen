@@ -7,6 +7,7 @@ import { CaseStudyCard } from "@/components/CaseStudyCard";
 import { PackageCard } from "@/components/PackageCard";
 import { caseStudies } from "@/lib/cases";
 import { packages } from "@/lib/packages";
+import { addons } from "@/lib/addons";
 
 export default function Home() {
   return (
@@ -55,9 +56,29 @@ export default function Home() {
                 <PackageCard key={pkg.id} pkg={pkg} />
               ))}
             </div>
-            <div style={{ textAlign: "center", marginTop: 32 }}>
-              <Link href="/diensten" className="nav-link" style={{ fontSize: 14, fontWeight: 600 }}>
-                Bekijk ook de losse automatiseringsopties →
+            <div className="card" style={{ marginTop: 40, padding: "26px 28px", display: "flex", alignItems: "center", justifyContent: "space-between", gap: 24, flexWrap: "wrap" }}>
+              <div style={{ display: "flex", flexDirection: "column", gap: 10, flex: "1 1 320px" }}>
+                <h3 style={{ fontSize: 18 }}>Vul aan met losse automatiseringen</h3>
+                <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
+                  {addons.slice(0, 4).map((addon) => (
+                    <span
+                      key={addon.id}
+                      style={{
+                        fontSize: 13,
+                        padding: "5px 12px",
+                        borderRadius: 999,
+                        background: "oklch(93% 0.03 148)",
+                        color: "oklch(34% 0.075 148)",
+                      }}
+                    >
+                      {addon.name}
+                    </span>
+                  ))}
+                  <span style={{ fontSize: 13, padding: "5px 4px", color: "oklch(52% 0.012 265)" }}>en meer</span>
+                </div>
+              </div>
+              <Link href="/diensten#automatiseringen" className="btn btn-secondary" style={{ flexShrink: 0 }}>
+                Bekijk automatiseringen
               </Link>
             </div>
           </div>
