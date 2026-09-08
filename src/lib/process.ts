@@ -15,7 +15,7 @@ export const processSteps: ProcessStep[] = [
     step: 2,
     title: "Ontwerp",
     description:
-      "Ik werk een ontwerp uit dat past bij jouw manier van coachen — rustig en professioneel waar dat nodig is, persoonlijk waar dat past. Je ziet en beoordeelt het ontwerp voordat er iets gebouwd wordt.",
+      "Ik werk een ontwerp uit dat past bij jouw manier van coachen — rustig en professioneel waar dat nodig is, persoonlijk waar dat past. We bepalen samen wat bij je past en wat je mooi vindt, bijvoorbeeld met een moodboard of voorbeelden van websites, en bespreken ook welke functionaliteiten je nodig hebt.",
   },
   {
     step: 3,
