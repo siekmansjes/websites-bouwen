@@ -15,7 +15,7 @@ export default function Home() {
       <main>
         <Hero />
 
-        <section style={{ padding: "24px 0 72px" }}>
+        <section id="cases" style={{ padding: "24px 0 72px" }}>
           <div className="wrap">
             <div style={{ textAlign: "center", maxWidth: 620, margin: "0 auto 44px" }}>
               <span className="eyebrow">Cases</span>

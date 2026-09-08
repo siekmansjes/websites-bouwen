@@ -56,7 +56,7 @@ export function SiteHeader() {
             <Link href="/" className="nav-link" style={{ color: "oklch(21% 0.015 265)" }}>
               Home
             </Link>
-            <Link href="/cases" className="nav-link" style={{ color: "oklch(21% 0.015 265)" }}>
+            <Link href="/#cases" className="nav-link" style={{ color: "oklch(21% 0.015 265)" }}>
               Cases
             </Link>
             <Link href="/proces" className="nav-link" style={{ color: "oklch(21% 0.015 265)" }}>

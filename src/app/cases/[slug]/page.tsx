@@ -31,7 +31,7 @@ export default async function CaseDetailPage({ params }: { params: Promise<{ slu
       <main>
         <section style={{ padding: "56px 0 72px" }}>
           <div className="wrap" style={{ maxWidth: 760, margin: "0 auto" }}>
-            <Link href="/cases" className="nav-link" style={{ fontSize: 13.5 }}>
+            <Link href="/#cases" className="nav-link" style={{ fontSize: 13.5 }}>
               ← Alle cases
             </Link>
             <div style={{ marginTop: 20, marginBottom: 12 }}>

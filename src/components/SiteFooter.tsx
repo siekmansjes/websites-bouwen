@@ -24,7 +24,7 @@ export function SiteFooter() {
 
         <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
           <span style={columnHeadingStyle}>Site</span>
-          <Link href="/cases" className="nav-link" style={footerLinkStyle}>
+          <Link href="/#cases" className="nav-link" style={footerLinkStyle}>
             Cases
           </Link>
           <Link href="/proces" className="nav-link" style={footerLinkStyle}>

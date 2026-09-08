@@ -18,7 +18,7 @@ export function Hero() {
             <Link href="/contact" className="btn btn-primary">
               Plan een gratis kennismaking
             </Link>
-            <Link href="/cases" className="btn btn-secondary">
+            <Link href="#cases" className="btn btn-secondary">
               Bekijk voorbeeldcases
             </Link>
           </div>

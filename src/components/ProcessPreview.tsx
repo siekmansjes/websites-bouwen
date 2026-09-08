@@ -3,13 +3,14 @@ import Link from "next/link";
 const milestones = [
   { step: "1", title: "Kennismaking", text: "Een kort gesprek over je praktijk en wat je nodig hebt." },
   { step: "2", title: "Bouw", text: "Ontwerp en bouw, inclusief de gekozen automatiseringen." },
-  { step: "3", title: "Livegang", text: "De site gaat live, met blijvende ondersteuning erna." },
+  { step: "3", title: "Review", text: "Je bekijkt en beoordeelt het resultaat, ik verwerk je wijzigingen." },
+  { step: "4", title: "Livegang", text: "Na jouw goedkeuring gaat de site live, met ondersteuning erna." },
 ];
 
 export function ProcessPreview() {
   return (
     <div>
-      <div className="grid-3">
+      <div className="grid-4">
         {milestones.map((item) => (
           <div key={item.step} style={{ display: "flex", flexDirection: "column", gap: 8 }}>
             <span style={{ fontFamily: "var(--font-fraunces), serif", fontSize: 26, fontWeight: 700, color: "oklch(93% 0.03 148)" }}>

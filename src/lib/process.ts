@@ -33,7 +33,7 @@ export const processSteps: ProcessStep[] = [
     step: 5,
     title: "Livegang",
     description:
-      "De site gaat live op je eigen domein. Ik zorg dat alles goed werkt: formulieren, koppelingen, en de basisinstellingen voor vindbaarheid in Google.",
+      "Na jouw goedkeuring op de review gaat de site live op je eigen domein. Ik zorg dat alles goed werkt: formulieren, koppelingen, en de basisinstellingen voor vindbaarheid in Google.",
   },
   {
     step: 6,
