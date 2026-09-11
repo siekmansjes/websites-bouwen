@@ -40,7 +40,7 @@ export function SiteHeader() {
         <Link
           href="/"
           style={{
-            fontFamily: "var(--font-fraunces), serif",
+            fontFamily: "var(--font-display), serif",
             fontWeight: 700,
             fontSize: 21,
             color: "oklch(21% 0.015 265)",

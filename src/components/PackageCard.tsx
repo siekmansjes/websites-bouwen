@@ -38,7 +38,7 @@ export function PackageCard({ pkg }: { pkg: PackageTier }) {
         <h3 style={{ fontSize: 21 }}>{pkg.name}</h3>
         <p style={{ fontSize: 13.5, color: "oklch(52% 0.012 265)", marginTop: 4 }}>{pkg.tagline}</p>
       </div>
-      <div style={{ fontFamily: "var(--font-fraunces), serif", fontSize: 28, fontWeight: 700 }}>{pkg.priceLabel}</div>
+      <div style={{ fontFamily: "var(--font-display), serif", fontSize: 28, fontWeight: 700 }}>{pkg.priceLabel}</div>
       <ul style={{ margin: 0, padding: 0, listStyle: "none", display: "flex", flexDirection: "column", gap: 10, flex: 1 }}>
         {pkg.features.map((feature) => (
           <li key={feature} style={{ display: "flex", gap: 8, fontSize: 14, alignItems: "flex-start" }}>

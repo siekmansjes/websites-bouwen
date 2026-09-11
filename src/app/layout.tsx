@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
-import { Fraunces, Inter } from "next/font/google";
+import { Lora, Inter } from "next/font/google";
 import { WishlistProvider } from "@/lib/wishlist/WishlistContext";
 import { SITE_URL } from "@/lib/site";
 import "./globals.css";
 
-const fraunces = Fraunces({
-  variable: "--font-fraunces",
+const displayFont = Lora({
+  variable: "--font-display",
   subsets: ["latin"],
-  weight: ["500", "600", "700", "900"],
+  weight: ["500", "600", "700"],
 });
 
 const inter = Inter({
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="nl" className={`${fraunces.variable} ${inter.variable}`}>
+    <html lang="nl" className={`${displayFont.variable} ${inter.variable}`}>
       <body>
         <WishlistProvider>{children}</WishlistProvider>
       </body>

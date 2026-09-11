@@ -13,7 +13,7 @@ export function ProcessPreview() {
       <div className="grid-4">
         {milestones.map((item) => (
           <div key={item.step} style={{ display: "flex", flexDirection: "column", gap: 8 }}>
-            <span style={{ fontFamily: "var(--font-fraunces), serif", fontSize: 26, fontWeight: 700, color: "oklch(93% 0.03 148)" }}>
+            <span style={{ fontFamily: "var(--font-display), serif", fontSize: 26, fontWeight: 700, color: "oklch(93% 0.03 148)" }}>
               {item.step}
             </span>
             <h3 style={{ fontSize: 18 }}>{item.title}</h3>
