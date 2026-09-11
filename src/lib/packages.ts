@@ -11,7 +11,7 @@ export const packages: PackageTier[] = [
   {
     id: "starter",
     name: "Starter",
-    priceLabel: "Vanaf €[PRIJS]",
+    priceLabel: "Vanaf €295",
     tagline: "Een professionele, complete website om online zichtbaar te zijn.",
     features: [
       "Tot 5 pagina's",
@@ -24,7 +24,7 @@ export const packages: PackageTier[] = [
   {
     id: "groei",
     name: "Groei",
-    priceLabel: "Vanaf €[PRIJS]",
+    priceLabel: "Vanaf €495",
     tagline: "Voor bedrijven die actief nieuwe klanten willen werven.",
     features: [
       "Alles uit Starter",
@@ -37,8 +37,8 @@ export const packages: PackageTier[] = [
   },
   {
     id: "op-maat",
-    name: "Op maat",
-    priceLabel: "Op aanvraag",
+    name: "Compleet",
+    priceLabel: "Vanaf €695",
     tagline: "Voor een bedrijf met specifieke wensen of meerdere teamleden.",
     features: [
       "Alles uit Groei",
