@@ -5,6 +5,7 @@ import { PackageCard } from "@/components/PackageCard";
 import { AddonCard } from "@/components/AddonCard";
 import { packages } from "@/lib/packages";
 import { addons } from "@/lib/addons";
+import { hostingPlan } from "@/lib/hosting";
 
 export const metadata: Metadata = {
   title: "Diensten",
@@ -32,6 +33,43 @@ export default function DienstenPage() {
             {packages.map((pkg) => (
               <PackageCard key={pkg.id} pkg={pkg} />
             ))}
+          </div>
+        </section>
+
+        <section id="hosting" style={{ padding: "0 0 72px" }}>
+          <div className="wrap">
+            <div
+              className="card"
+              style={{
+                padding: "30px 28px",
+                display: "flex",
+                gap: 28,
+                flexWrap: "wrap",
+                alignItems: "center",
+                justifyContent: "space-between",
+              }}
+            >
+              <div style={{ flex: "1 1 320px" }}>
+                <span className="eyebrow">Bij elk pakket</span>
+                <h2 style={{ fontSize: 22, marginTop: 8 }}>{hostingPlan.name}</h2>
+                <p style={{ fontSize: 14, lineHeight: 1.6, color: "oklch(52% 0.012 265)", marginTop: 8, maxWidth: 480 }}>
+                  {hostingPlan.tagline}
+                </p>
+              </div>
+              <ul style={{ margin: 0, padding: 0, listStyle: "none", display: "flex", flexDirection: "column", gap: 10, flex: "1 1 280px" }}>
+                {hostingPlan.features.map((feature) => (
+                  <li key={feature} style={{ display: "flex", gap: 8, fontSize: 14, alignItems: "flex-start" }}>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="oklch(42% 0.08 148)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: 3 }}>
+                      <path d="M20 6 9 17l-5-5" />
+                    </svg>
+                    <span style={{ color: "oklch(21% 0.015 265)" }}>{feature}</span>
+                  </li>
+                ))}
+              </ul>
+              <div style={{ fontFamily: "var(--font-display), serif", fontSize: 26, fontWeight: 700, flexShrink: 0 }}>
+                {hostingPlan.priceLabel}
+              </div>
+            </div>
           </div>
         </section>
 
