@@ -18,7 +18,7 @@ export const addons: AddonItem[] = [
     name: "Agenda-koppeling",
     description:
       "Bezoekers plannen direct een kennismakingsgesprek in via Cal.com, zonder mailwisseling over beschikbaarheid.",
-    priceLabel: "€125",
+    priceLabel: "€150",
   },
   {
     id: "crm-koppeling",
@@ -39,13 +39,13 @@ export const addons: AddonItem[] = [
     name: "Automatische e-mailreeks",
     description:
       "Een reeks opvolgmails na een aanvraag of intake, zodat niemand tussen wal en schip valt.",
-    priceLabel: "€125",
+    priceLabel: "€175",
   },
   {
     id: "facturatie-koppeling",
     name: "Facturatie-koppeling (Moneybird)",
     description:
       "Na een geboekt traject wordt automatisch een conceptfactuur klaargezet in Moneybird. Werk je met een ander boekhoudpakket? Kan ook, als maatwerk tegen een aangepaste prijs.",
-    priceLabel: "€150",
+    priceLabel: "€175",
   },
 ];
