@@ -24,12 +24,13 @@ export function OfferteBuilder({ onBack, initialPackageId }: { onBack: () => voi
     setStatus("submitting");
 
     try {
+      const packageName = packages.find((pkg) => pkg.id === packageId)?.name ?? packageId;
       await submitToHubspot({
         naam,
         bedrijfsnaam,
         email,
         opmerkingen,
-        pakket: packageId,
+        pakket: packageName,
         extras: items.map((item) => item.name).join(", "),
       });
       setStatus("success");
