@@ -3,6 +3,7 @@
 import { useState, type FormEvent } from "react";
 import { inputStyle, labelStyle } from "./formStyles";
 import { submitToHubspot } from "@/lib/integrations/hubspot";
+import { LEAD_SOURCE_PREFIX } from "@/lib/site";
 
 type Status = "idle" | "submitting" | "success" | "error";
 
@@ -60,7 +61,7 @@ export function ProjectIntake({ onBack }: { onBack: () => void }) {
 
     try {
       await submitToHubspot({
-        naam,
+        naam: `${LEAD_SOURCE_PREFIX} ${naam}`,
         email,
         praktijknaam,
         branche,

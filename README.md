@@ -34,13 +34,17 @@ Privacybeleid (`src/app/privacy/page.tsx`):
 - `[DATUM]` (laatst bijgewerkt) nog in te vullen.
 
 HubSpot-koppeling (`src/lib/integrations/hubspot.ts`):
-- **Keuze gemaakt**: apart HubSpot-formulier voor dit bedrijf, niet het
-  gedeelde Parkmade/merchmark-formulier hergebruiken (andere velden, andere
-  pipeline).
+- **Keuze gemaakt**: het bestaande gedeelde Parkmade/merchmark-formulier
+  hergebruiken, geen apart formulier. Dat formulier heeft alleen naam/e-mail
+  (evt. bestand) als velden — bericht/bedrijfsnaam/pakket/extra's komen dus
+  niet mee tenzij dat formulier later wordt uitgebreid.
+- Om leads herkenbaar te houden tussen de bedrijven: de naam wordt geprefixt
+  met `LEAD_SOURCE_PREFIX` (`src/lib/site.ts`, nu `"[Websites Bouwen]"`) vóór
+  het versturen.
 - Contact-, offerte- en intakeformulier roepen `submitToHubspot()` al
   daadwerkelijk aan — wacht nog op `NEXT_PUBLIC_HUBSPOT_PORTAL_ID` en
-  `NEXT_PUBLIC_HUBSPOT_FORM_ID` in `.env.local` (zie `.env.example`) zodra
-  het formulier in HubSpot is aangemaakt.
+  `NEXT_PUBLIC_HUBSPOT_FORM_ID` in `.env.local` (zie `.env.example`), zelfde
+  waardes als bij het Parkmade-formulier.
 - Projectintake (`/contact?mode=intake`) staat bewust niet in het publieke
   contact-keuzemenu — die stuurt Mark zelf pas na een toezegging.
 

@@ -6,6 +6,7 @@ import { useWishlist } from "@/lib/wishlist/WishlistContext";
 import { packages } from "@/lib/packages";
 import { inputStyle, labelStyle } from "./formStyles";
 import { submitToHubspot } from "@/lib/integrations/hubspot";
+import { LEAD_SOURCE_PREFIX } from "@/lib/site";
 
 type Status = "idle" | "submitting" | "success" | "error";
 
@@ -26,7 +27,7 @@ export function OfferteBuilder({ onBack, initialPackageId }: { onBack: () => voi
     try {
       const packageName = packages.find((pkg) => pkg.id === packageId)?.name ?? packageId;
       await submitToHubspot({
-        naam,
+        naam: `${LEAD_SOURCE_PREFIX} ${naam}`,
         bedrijfsnaam,
         email,
         opmerkingen,

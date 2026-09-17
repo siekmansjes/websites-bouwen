@@ -8,3 +8,8 @@ export const CONTACT_PHONE = "[TELEFOONNUMMER]";
 export const CONTACT_ADDRESS = "[ADRESGEGEVENS]";
 export const KVK_NUMBER = "[KVK-NUMMER]";
 export const BTW_NUMBER = "[BTW-NUMMER]";
+
+// Gebruikt om leads herkenbaar te maken in een gedeeld HubSpot-formulier
+// (samen met Parkmade/merchmark) — voor de naam geplakt, zodat het altijd
+// zichtbaar is ongeacht welke velden het gedeelde formulier verder heeft.
+export const LEAD_SOURCE_PREFIX = "[Websites Bouwen]";
