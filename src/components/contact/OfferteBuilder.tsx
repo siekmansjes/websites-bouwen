@@ -5,8 +5,9 @@ import Link from "next/link";
 import { useWishlist } from "@/lib/wishlist/WishlistContext";
 import { packages } from "@/lib/packages";
 import { inputStyle, labelStyle } from "./formStyles";
+import { submitToHubspot } from "@/lib/integrations/hubspot";
 
-type Status = "idle" | "submitting" | "success";
+type Status = "idle" | "submitting" | "success" | "error";
 
 export function OfferteBuilder({ onBack, initialPackageId }: { onBack: () => void; initialPackageId?: string }) {
   const { items, isLoaded, removeItem } = useWishlist();
@@ -22,13 +23,19 @@ export function OfferteBuilder({ onBack, initialPackageId }: { onBack: () => voi
     event.preventDefault();
     setStatus("submitting");
 
-    // TODO: hier moet de daadwerkelijke offerteaanvraag naartoe — bv. een
-    // HubSpot-koppeling zoals bij Parkmade (contact/deal/notitie aanmaken),
-    // maar met een eigen account/pipeline/eigenaar-ID voor dit bedrijf.
-    // Voor nu simuleert dit alleen het versturen, met het gekozen pakket +
-    // de wensenlijst als payload, zodat de flow al volledig te testen is.
-    await new Promise((resolve) => setTimeout(resolve, 400));
-    setStatus("success");
+    try {
+      await submitToHubspot({
+        naam,
+        bedrijfsnaam,
+        email,
+        opmerkingen,
+        pakket: packageId,
+        extras: items.map((item) => item.name).join(", "),
+      });
+      setStatus("success");
+    } catch {
+      setStatus("error");
+    }
   }
 
   if (status === "success") {
@@ -173,6 +180,11 @@ export function OfferteBuilder({ onBack, initialPackageId }: { onBack: () => voi
         <button type="submit" className="btn btn-primary" style={{ justifyContent: "center", marginTop: 8 }} disabled={status === "submitting" || !privacyAccepted || !packageId}>
           {status === "submitting" ? "Versturen…" : "Verstuur offerteaanvraag"}
         </button>
+        {status === "error" && (
+          <p style={{ fontSize: 13, color: "oklch(42% 0.08 148)", textAlign: "center" }}>
+            Versturen is niet gelukt. Probeer het nogmaals, of mail rechtstreeks.
+          </p>
+        )}
         <p style={{ fontSize: 13, color: "oklch(52% 0.012 265)", textAlign: "center" }}>Ik reageer binnen 24 uur met een voorstel.</p>
       </form>
     </div>

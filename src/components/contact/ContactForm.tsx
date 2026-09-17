@@ -3,8 +3,9 @@
 import { useState, type FormEvent } from "react";
 import Link from "next/link";
 import { inputStyle, labelStyle } from "./formStyles";
+import { submitToHubspot } from "@/lib/integrations/hubspot";
 
-type Status = "idle" | "submitting" | "success";
+type Status = "idle" | "submitting" | "success" | "error";
 
 export function ContactForm({ onBack }: { onBack: () => void }) {
   const [naam, setNaam] = useState("");
@@ -17,12 +18,12 @@ export function ContactForm({ onBack }: { onBack: () => void }) {
     event.preventDefault();
     setStatus("submitting");
 
-    // TODO: hier moet een echte inzending naartoe (bv. een HubSpot-koppeling
-    // zoals bij Parkmade, maar met een eigen account/pipeline voor dit
-    // bedrijf — nog te bepalen). Voor nu simuleert dit alleen het versturen,
-    // zodat de flow al volledig te testen is.
-    await new Promise((resolve) => setTimeout(resolve, 400));
-    setStatus("success");
+    try {
+      await submitToHubspot({ naam, email, bericht });
+      setStatus("success");
+    } catch {
+      setStatus("error");
+    }
   }
 
   return (
@@ -98,6 +99,11 @@ export function ContactForm({ onBack }: { onBack: () => void }) {
           <button type="submit" className="btn btn-primary" style={{ justifyContent: "center", marginTop: 8 }} disabled={status === "submitting" || !privacyAccepted}>
             {status === "submitting" ? "Versturen…" : "Verstuur bericht"}
           </button>
+          {status === "error" && (
+            <p style={{ fontSize: 13, color: "oklch(42% 0.08 148)", textAlign: "center" }}>
+              Versturen is niet gelukt. Probeer het nogmaals, of mail rechtstreeks.
+            </p>
+          )}
           <p style={{ fontSize: 13, color: "oklch(52% 0.012 265)", textAlign: "center" }}>Ik reageer binnen 24 uur.</p>
         </form>
       )}

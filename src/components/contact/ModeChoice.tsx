@@ -17,22 +17,11 @@ const options = [
       </>
     ),
   },
-  {
-    mode: "intake" as const,
-    title: "Start de projectintake",
-    text: "Beantwoord een paar vragen over structuur, kleur en inhoud, zodat ik direct gericht aan de slag kan.",
-    icon: (
-      <>
-        <path d="M9 11l2 2 4-4" />
-        <path d="M5 4h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1z" />
-      </>
-    ),
-  },
 ];
 
-export function ModeChoice({ onSelect }: { onSelect: (mode: "contact" | "offerte" | "intake") => void }) {
+export function ModeChoice({ onSelect }: { onSelect: (mode: "contact" | "offerte") => void }) {
   return (
-    <div className="grid-3" style={{ gap: 20 }}>
+    <div className="grid-2" style={{ gap: 20 }}>
       {options.map((option) => (
         <button
           key={option.mode}

@@ -2,8 +2,9 @@
 
 import { useState, type FormEvent } from "react";
 import { inputStyle, labelStyle } from "./formStyles";
+import { submitToHubspot } from "@/lib/integrations/hubspot";
 
-type Status = "idle" | "submitting" | "success";
+type Status = "idle" | "submitting" | "success" | "error";
 
 const themeOptions = [
   { id: "salie", name: "Salie", swatch: "oklch(58% 0.07 132)" },
@@ -57,11 +58,26 @@ export function ProjectIntake({ onBack }: { onBack: () => void }) {
     event.preventDefault();
     setStatus("submitting");
 
-    // TODO: hier moet de intake naartoe (bv. een HubSpot-koppeling zoals bij
-    // Parkmade). Voor nu simuleert dit alleen het versturen, zodat de flow
-    // al volledig te testen is.
-    await new Promise((resolve) => setTimeout(resolve, 400));
-    setStatus("success");
+    try {
+      await submitToHubspot({
+        naam,
+        email,
+        praktijknaam,
+        branche,
+        doelgroep,
+        navigatie,
+        theme,
+        prijzenTonen,
+        koppelingen: koppelingen.join(", "),
+        eigenFotos,
+        domeinnaam,
+        teksten,
+        overig,
+      });
+      setStatus("success");
+    } catch {
+      setStatus("error");
+    }
   }
 
   if (status === "success") {
@@ -229,6 +245,11 @@ export function ProjectIntake({ onBack }: { onBack: () => void }) {
         <button type="submit" className="btn btn-primary" style={{ justifyContent: "center" }} disabled={status === "submitting" || !privacyAccepted}>
           {status === "submitting" ? "Versturen…" : "Verstuur intake"}
         </button>
+        {status === "error" && (
+          <p style={{ fontSize: 13, color: "oklch(42% 0.08 148)", textAlign: "center" }}>
+            Versturen is niet gelukt. Probeer het nogmaals, of mail rechtstreeks.
+          </p>
+        )}
         <p style={{ fontSize: 13, color: "oklch(52% 0.012 265)", textAlign: "center" }}>Ik reageer binnen 24 uur met een concreet voorstel.</p>
       </form>
     </div>
