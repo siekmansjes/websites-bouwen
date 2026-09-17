@@ -12,9 +12,9 @@ export const packages: PackageTier[] = [
     id: "starter",
     name: "Starter",
     priceLabel: "Vanaf €395",
-    tagline: "Een professionele, complete website om online zichtbaar te zijn.",
+    tagline: "Een simpele, professionele eerste indruk online.",
     features: [
-      "Tot 5 pagina's",
+      "Tot 3 pagina's",
       "Modern, mobielvriendelijk ontwerp",
       "Contactformulier",
       "Basis zoekmachine-optimalisatie",
@@ -25,7 +25,7 @@ export const packages: PackageTier[] = [
     id: "groei",
     name: "Groei",
     priceLabel: "Vanaf €695",
-    tagline: "Voor bedrijven die actief nieuwe klanten willen werven.",
+    tagline: "Wat de meeste MKB'ers nodig hebben om actief nieuwe klanten te werven.",
     features: [
       "Alles uit Starter",
       "Tot 10 pagina's, incl. cases/blog",

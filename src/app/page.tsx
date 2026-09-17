@@ -54,6 +54,10 @@ export default function Home() {
             <div style={{ textAlign: "center", maxWidth: 620, margin: "0 auto 44px" }}>
               <span className="eyebrow">Pakketten</span>
               <h2 style={{ fontSize: 34, marginTop: 10 }}>Kies wat bij je bedrijf past</h2>
+              <p style={{ fontSize: 14.5, color: "oklch(52% 0.012 265)", marginTop: 12 }}>
+                Starter is een lichte eerste indruk. De meeste MKB&apos;ers kiezen Groei: de automatiseringen
+                besparen vaak al binnen een maand meer tijd dan het prijsverschil met Starter.
+              </p>
             </div>
             <div className="grid-3">
               {packages.map((pkg) => (
