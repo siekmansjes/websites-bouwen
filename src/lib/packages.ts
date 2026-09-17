@@ -24,7 +24,7 @@ export const packages: PackageTier[] = [
   {
     id: "groei",
     name: "Groei",
-    priceLabel: "Vanaf €695",
+    priceLabel: "Vanaf €749",
     tagline: "Wat de meeste MKB'ers nodig hebben om actief nieuwe klanten te werven.",
     features: [
       "Alles uit Starter",
