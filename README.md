@@ -1,8 +1,12 @@
 # websites-bouwen
 
-Marketingsite voor het webbureau, gericht op coaches (loopbaan-/persoonlijke
-coaching) als eerste doelgroep. Next.js (App Router) + TypeScript, inline
-`style={{}}`-styling met `oklch()`-kleuren (Tailwind alleen voor de reset).
+Marketingsite voor het webbureau, generiek gericht op MKB'ers met coaches als
+eerste doelgroep (aparte niche-uitwerking mogelijk, zie `/voor-coaches`).
+Next.js (App Router) + TypeScript, inline `style={{}}`-styling met
+`oklch()`-kleuren (Tailwind alleen voor de reset).
+
+Voor het herbruikbare klant-sjabloon (koppelingen, themasysteem) zie de
+aparte `sitekit`-repo.
 
 ## Starten
 
@@ -13,35 +17,40 @@ npm run dev
 
 Draait op [http://localhost:3000](http://localhost:3000).
 
-## Nog in te vullen
+## Nog open
 
 Bedrijfsgegevens (`src/lib/site.ts`):
-- `[BEDRIJFSNAAM]`, `[DOMEIN]`, `[E-MAILADRES]`, `[TELEFOONNUMMER]`,
-  `[ADRESGEGEVENS]`, `[KVK-NUMMER]`, `[BTW-NUMMER]`
+- `[BEDRIJFSNAAM]`, `[E-MAILADRES]`, `[TELEFOONNUMMER]`, `[ADRESGEGEVENS]`,
+  `[KVK-NUMMER]`, `[BTW-NUMMER]` — nog placeholders, alleen met echte
+  bedrijfsgegevens in te vullen.
+- `SITE_URL` staat nog op een placeholder-domein.
 
 Cases (`src/lib/cases.ts`):
-- De 3 voorbeeldcases zijn illustratief (`isExample: true`) — vervangen door
-  echte klantverhalen zodra beschikbaar. De `ExampleBadge` op elke case kan
-  dan weg.
-
-Pakketten & automatiseringen (`src/lib/packages.ts`, `src/lib/addons.ts`):
-- `[PRIJS]` per pakket/add-on invullen.
-- `[AANTAL]` (levertijd Starter-pakket) invullen.
-- De automatiseringenlijst is een voorbeeldset — aanvullen/aanpassen naar het
-  definitieve aanbod.
-
-Over mij (`src/app/over-mij/page.tsx`):
-- `[Naam]` en de introductietekst invullen.
+- 5 illustratieve cases (`isExample: true`) — 2 generiek MKB (fysiotherapie,
+  klussenbedrijf) + 3 coach-cases voor `/voor-coaches`. Vervangen door echte
+  klantverhalen zodra beschikbaar; `ExampleBadge` kan dan weg.
 
 Privacybeleid (`src/app/privacy/page.tsx`):
-- `[DATUM]` (laatst bijgewerkt) invullen.
+- `[DATUM]` (laatst bijgewerkt) nog in te vullen.
 
-Offerte-/contactformulier (`src/components/contact/ContactForm.tsx`,
-`src/components/contact/OfferteBuilder.tsx`):
-- Verstuurt nog niet echt iets door (gemarkeerd met `TODO`-comments) — wacht
-  op een keuze: HubSpot in hetzelfde account als Parkmade (met een eigen
-  pipeline/stage/eigenaar-ID) of een apart account/CRM voor dit bedrijf.
+HubSpot-koppeling (`src/lib/integrations/hubspot.ts`):
+- **Keuze gemaakt**: apart HubSpot-formulier voor dit bedrijf, niet het
+  gedeelde Parkmade/merchmark-formulier hergebruiken (andere velden, andere
+  pipeline).
+- Contact-, offerte- en intakeformulier roepen `submitToHubspot()` al
+  daadwerkelijk aan — wacht nog op `NEXT_PUBLIC_HUBSPOT_PORTAL_ID` en
+  `NEXT_PUBLIC_HUBSPOT_FORM_ID` in `.env.local` (zie `.env.example`) zodra
+  het formulier in HubSpot is aangemaakt.
+- Projectintake (`/contact?mode=intake`) staat bewust niet in het publieke
+  contact-keuzemenu — die stuurt Mark zelf pas na een toezegging.
 
 Domein/Vercel:
 - Lokaal draait de site nu op localhost:3000. Deployen naar Vercel gebeurt
   in een latere stap, na goedkeuring van de lokale versie.
+
+## Al ingevuld (niet meer open)
+
+- Pakketten & extra's (`src/lib/packages.ts`, `src/lib/addons.ts`): echte
+  prijzen, getoetst aan de markt en onderling consistent.
+- Over mij (`src/app/over-mij/page.tsx`): echte introductietekst.
+- Hosting & onderhoud: apart geprijsd, staat bij elk pakket.
