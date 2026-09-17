@@ -30,7 +30,7 @@ export const packages: PackageTier[] = [
       "Alles uit Starter",
       "Tot 10 pagina's, incl. cases/blog",
       "Geautomatiseerd intakeformulier",
-      "Agenda-koppeling voor kennismakingsgesprekken",
+      "Agenda-koppeling (Cal.com) voor kennismakingsgesprekken",
       "Uitgebreide zoekmachine-optimalisatie",
       "Oplevering binnen 3 weken",
     ],

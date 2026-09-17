@@ -14,6 +14,34 @@ export type CaseStudy = {
 
 export const caseStudies: CaseStudy[] = [
   {
+    slug: "fysiotherapiepraktijk-automatische-intake",
+    audience: "mkb-algemeen",
+    clientName: "[Voorbeeldklant] — Fysiotherapiepraktijk",
+    sector: "Fysiotherapie",
+    problem:
+      "Nieuwe patiënten belden vaak buiten praktijkuren of stuurden een mail die pas de volgende dag werd gelezen, waardoor de eerste afspraak soms dagen op zich liet wachten.",
+    solution:
+      "Een website met een intakeformulier en agenda-koppeling, zodat een patiënt direct een moment kan inplannen dat past — zonder telefoontje of wachten op een reactie.",
+    result:
+      "Sneller een eerste afspraak voor de patiënt, en minder tijd kwijt aan de telefoon voor de praktijk.",
+    image: "/cases/fysiotherapiepraktijk.svg",
+    isExample: true,
+  },
+  {
+    slug: "klussenbedrijf-meer-aanvragen",
+    audience: "mkb-algemeen",
+    clientName: "[Voorbeeldklant] — Klussenbedrijf",
+    sector: "Verbouw & renovatie",
+    problem:
+      "De oude website liet wel zien wát het bedrijf deed, maar gaf bezoekers geen duidelijke volgende stap — aanvragen kwamen sporadisch en vaak onvolledig binnen.",
+    solution:
+      "Een heldere site met duidelijke diensten, voorbeeldwerk en één centraal offerteformulier dat meteen de juiste vraag stelt, zodat elke aanvraag direct bruikbaar is.",
+    result:
+      "Meer volledige offerteaanvragen, en geen tijd meer kwijt aan doorvragen naar basisinformatie.",
+    image: "/cases/klussenbedrijf.svg",
+    isExample: true,
+  },
+  {
     slug: "loopbaancoach-website-met-intake",
     audience: "coaches",
     clientName: "[Voorbeeldklant] — Loopbaancoach",

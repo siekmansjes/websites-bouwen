@@ -30,8 +30,8 @@ export default function OverMijPage() {
               <p style={{ fontSize: 15.5, lineHeight: 1.7, color: "oklch(21% 0.015 265)" }}>
                 Ik werk bewust met een beperkt aantal klanten tegelijk, zodat er echt tijd is voor
                 persoonlijke aandacht. Geen ontwerp uit een sjabloon, maar een site die past bij hoe jij werkt
-                en wat jouw klanten nodig hebben. Ik begin met coaches als doelgroep, en breid van daaruit uit
-                naar andere MKB&apos;ers.
+                en wat jouw klanten nodig hebben — of je nu coach bent, een praktijk runt of een ander
+                MKB-bedrijf hebt.
               </p>
             </div>
             <div style={{ marginTop: 40 }}>

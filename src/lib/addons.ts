@@ -17,15 +17,15 @@ export const addons: AddonItem[] = [
     id: "agenda-koppeling",
     name: "Agenda-koppeling",
     description:
-      "Bezoekers plannen direct een kennismakingsgesprek in jouw agenda, zonder mailwisseling over beschikbaarheid.",
+      "Bezoekers plannen direct een kennismakingsgesprek in via Cal.com, zonder mailwisseling over beschikbaarheid.",
     priceLabel: "€125",
   },
   {
     id: "crm-koppeling",
-    name: "CRM-koppeling",
+    name: "CRM-koppeling (HubSpot)",
     description:
-      "Nieuwe aanvragen komen automatisch binnen in het CRM dat je al gebruikt, inclusief alle ingevulde intake-informatie.",
-    priceLabel: "Vanaf €225",
+      "Nieuwe aanvragen komen automatisch binnen in HubSpot, inclusief alle ingevulde intake-informatie. Werk je met een ander CRM? Kan ook, als maatwerk tegen een aangepaste prijs.",
+    priceLabel: "€150",
   },
   {
     id: "chatbot",
@@ -43,9 +43,9 @@ export const addons: AddonItem[] = [
   },
   {
     id: "facturatie-koppeling",
-    name: "Facturatie-koppeling",
+    name: "Facturatie-koppeling (Moneybird)",
     description:
-      "Na een geboekt traject wordt automatisch een conceptfactuur klaargezet in je boekhoudpakket.",
-    priceLabel: "Vanaf €225",
+      "Na een geboekt traject wordt automatisch een conceptfactuur klaargezet in Moneybird. Werk je met een ander boekhoudpakket? Kan ook, als maatwerk tegen een aangepaste prijs.",
+    priceLabel: "€150",
   },
 ];

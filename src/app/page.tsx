@@ -30,7 +30,7 @@ export default function Home() {
               </p>
             </div>
             <div className="grid-3">
-              {caseStudies.map((caseStudy) => (
+              {caseStudies.slice(0, 3).map((caseStudy) => (
                 <CaseStudyCard key={caseStudy.slug} caseStudy={caseStudy} />
               ))}
             </div>
