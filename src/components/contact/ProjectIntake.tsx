@@ -6,7 +6,7 @@ import { inputStyle, labelStyle } from "./formStyles";
 type Status = "idle" | "submitting" | "success";
 
 const themeOptions = [
-  { id: "bosgroen", name: "Bosgroen", swatch: "oklch(42% 0.08 148)" },
+  { id: "salie", name: "Salie", swatch: "oklch(58% 0.07 132)" },
   { id: "zakelijk-blauw", name: "Zakelijk blauw", swatch: "oklch(40% 0.11 255)" },
   { id: "warm-terracotta", name: "Warm terracotta", swatch: "oklch(52% 0.13 40)" },
   { id: "neutraal-antraciet", name: "Neutraal antraciet", swatch: "oklch(35% 0.01 260)" },
