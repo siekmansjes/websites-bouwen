@@ -5,7 +5,8 @@ export type CaseStudy = {
   problem: string;
   solution: string;
   result: string;
-  image: string;
+  /** Alleen zetten als er een echte foto in public/cases/ staat. */
+  image?: string;
   /** Doelgroep-label, gebruikt om cases te filteren op een doelgroep-landingspagina (bv. "coaches"). */
   audience: string;
   /** Markeert deze case als voorbeeldcontent — nog te vervangen door een echte case. */
@@ -24,7 +25,7 @@ export const caseStudies: CaseStudy[] = [
       "Een website met live productprijzen, een configurator waarmee een klant zelf producten en een eigen 2D-ontwerp samenstelt, een wensenlijst om die selectie te bewaren, en volledige koppelingen met HubSpot (CRM), agenda (kennismakingsgesprekken) en Moneybird (facturatie) zodat een aanvraag direct compleet en verwerkbaar binnenkomt.",
     result:
       "Een klant stelt zelf een assortiment samen, ziet direct de prijs, en een aanvraag hoeft aan onze kant niet meer handmatig te worden aangevuld of nagevraagd.",
-    image: "/cases/parkmade.svg",
+    image: "/cases/parkmade.webp",
     isExample: false,
   },
   {
@@ -38,7 +39,6 @@ export const caseStudies: CaseStudy[] = [
       "Een website met een intakeformulier en agenda-koppeling, zodat een patiënt direct een moment kan inplannen dat past — zonder telefoontje of wachten op een reactie.",
     result:
       "Sneller een eerste afspraak voor de patiënt, en minder tijd kwijt aan de telefoon voor de praktijk.",
-    image: "/cases/fysiotherapiepraktijk.svg",
     isExample: true,
   },
   {
@@ -52,7 +52,6 @@ export const caseStudies: CaseStudy[] = [
       "Een heldere site met duidelijke diensten, voorbeeldwerk en één centraal offerteformulier dat meteen de juiste vraag stelt, zodat elke aanvraag direct bruikbaar is.",
     result:
       "Meer volledige offerteaanvragen, en geen tijd meer kwijt aan doorvragen naar basisinformatie.",
-    image: "/cases/klussenbedrijf.svg",
     isExample: true,
   },
   {
@@ -66,7 +65,6 @@ export const caseStudies: CaseStudy[] = [
       "Een nieuwe site met een helder stappenplan, drie duidelijke pakketten en een intakeformulier dat automatisch de eerste kennismaking inplant, zodat een bezoeker binnen twee minuten een afspraak in de agenda heeft staan.",
     result:
       "Meer aanvragen die meteen de juiste verwachtingen hebben over aanpak en investering, en minder tijd kwijt aan heen-en-weer mailen voor een eerste afspraak.",
-    image: "/cases/loopbaancoach.svg",
     isExample: true,
   },
   {
@@ -80,7 +78,6 @@ export const caseStudies: CaseStudy[] = [
       "Een moderne, rustige website die de werkwijze en persoonlijkheid van de coach centraal zet, met echte klantverhalen en een duidelijke eerste stap richting een kennismakingsgesprek.",
     result:
       "Een site die past bij het niveau van de coaching zelf, en die nieuwe klanten vertrouwen geeft nog vóór het eerste gesprek.",
-    image: "/cases/persoonlijk-coach.svg",
     isExample: true,
   },
   {
@@ -94,7 +91,6 @@ export const caseStudies: CaseStudy[] = [
       "Een website met geautomatiseerde intake en agenda-koppeling, zodat een aanvraag automatisch bij de juiste coach terechtkomt en een voorstel voor een eerste gesprek al klaarstaat.",
     result:
       "Minder administratief werk per aanvraag, en meer tijd voor het coachen zelf in plaats van het plannen ervan.",
-    image: "/cases/coachpraktijk.svg",
     isExample: true,
   },
 ];

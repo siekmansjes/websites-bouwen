@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { SiteHeader } from "@/components/SiteHeader";
@@ -44,6 +45,7 @@ export default async function CaseDetailPage({ params }: { params: Promise<{ slu
 
             <div
               style={{
+                position: "relative",
                 aspectRatio: "16 / 9",
                 background: "oklch(93% 0.03 148)",
                 borderRadius: 8,
@@ -51,12 +53,17 @@ export default async function CaseDetailPage({ params }: { params: Promise<{ slu
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
+                overflow: "hidden",
               }}
             >
-              <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="oklch(34% 0.075 148)" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round">
-                <rect x="3" y="4" width="18" height="14" rx="2" />
-                <path d="M3 9h18M8 4v14" />
-              </svg>
+              {caseStudy.image ? (
+                <Image src={caseStudy.image} alt={caseStudy.clientName} fill style={{ objectFit: "cover" }} />
+              ) : (
+                <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="oklch(34% 0.075 148)" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round">
+                  <rect x="3" y="4" width="18" height="14" rx="2" />
+                  <path d="M3 9h18M8 4v14" />
+                </svg>
+              )}
             </div>
 
             <div style={{ display: "flex", flexDirection: "column", gap: 28 }}>
