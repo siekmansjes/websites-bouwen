@@ -49,8 +49,23 @@ HubSpot-koppeling (`src/lib/integrations/hubspot.ts`):
   contact-keuzemenu — die stuurt Mark zelf pas na een toezegging.
 
 Domein/Vercel:
+- Naam wordt **Sitegilde** (sitegilde.nl, nog te registreren — beschikbaar
+  bevonden bij TransIP). Zodra geregistreerd: `SITE_NAME`/`SITE_URL` in
+  `site.ts` bijwerken.
 - Lokaal draait de site nu op localhost:3000. Deployen naar Vercel gebeurt
   in een latere stap, na goedkeuring van de lokale versie.
+
+Resend (automatische e-mailopvolging) — **bewust uitgesteld**:
+- Doel: automatische opvolgmail(s) voor zowel Parkmade als Sitegilde, als
+  goedkoper alternatief vóór een eventuele HubSpot-upgrade naar een betaald
+  Marketing Hub-abonnement (nodig voor HubSpot's eigen workflows).
+- Twee te bouwen niveaus, later samen te plannen: (1) simpele directe
+  bevestigingsmail — snel te bouwen, geen nieuwe infrastructuur; (2) echte
+  getimede reeks (dag 0/3/7 e.d.) — vraagt een database + geplande taak
+  (Vercel Cron), groter werk.
+- Nog nodig zodra dit opgepakt wordt: Resend-account, `RESEND_API_KEY`, een
+  geverifieerd verzenddomein (Parkmade-domein + sitegilde.nl zodra
+  geregistreerd).
 
 ## Al ingevuld (niet meer open)
 
