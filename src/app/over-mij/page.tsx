@@ -35,8 +35,8 @@ export default function OverMijPage() {
               </p>
             </div>
             <div style={{ marginTop: 40 }}>
-              <Link href="/contact" className="btn btn-primary">
-                Plan een gratis kennismaking
+              <Link href="/contact?mode=contact" className="btn btn-primary">
+                Stuur een bericht
               </Link>
             </div>
           </div>

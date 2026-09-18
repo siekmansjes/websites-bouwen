@@ -73,8 +73,8 @@ export function SiteHeader() {
             </Link>
           </nav>
           <WishlistIndicator />
-          <Link href="/contact" className="btn btn-primary header-cta" style={{ padding: "10px 18px", fontSize: 13.5 }}>
-            Gratis kennismaking
+          <Link href="/contact?mode=contact" className="btn btn-primary header-cta" style={{ padding: "10px 18px", fontSize: 13.5 }}>
+            Stuur een bericht
           </Link>
           <MobileNav />
         </div>

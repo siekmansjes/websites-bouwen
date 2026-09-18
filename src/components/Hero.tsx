@@ -19,8 +19,8 @@ export function Hero({
             {description}
           </p>
           <div style={{ display: "flex", gap: 12, flexWrap: "wrap", marginTop: 6 }}>
-            <Link href="/contact" className="btn btn-primary">
-              Plan een gratis kennismaking
+            <Link href="/contact?mode=contact" className="btn btn-primary">
+              Stuur een bericht
             </Link>
             <Link href="#cases" className="btn btn-secondary">
               Bekijk voorbeeldcases

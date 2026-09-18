@@ -59,8 +59,8 @@ export function SiteFooter() {
           <a href={`tel:${CONTACT_PHONE}`} className="nav-link" style={footerLinkStyle}>
             {CONTACT_PHONE}
           </a>
-          <Link href="/contact" className="btn btn-secondary" style={{ padding: "8px 16px", fontSize: 13.5, alignSelf: "flex-start", marginTop: 4 }}>
-            Gratis kennismaking
+          <Link href="/contact?mode=contact" className="btn btn-secondary" style={{ padding: "8px 16px", fontSize: 13.5, alignSelf: "flex-start", marginTop: 4 }}>
+            Stuur een bericht
           </Link>
         </div>
       </div>

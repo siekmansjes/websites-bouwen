@@ -68,12 +68,12 @@ export function MobileNav() {
             </Link>
           ))}
           <Link
-            href="/contact"
+            href="/contact?mode=contact"
             onClick={() => setOpen(false)}
             className="btn btn-primary"
             style={{ justifyContent: "center", marginTop: 8 }}
           >
-            Gratis kennismaking
+            Stuur een bericht
           </Link>
         </div>
       )}

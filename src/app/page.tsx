@@ -99,8 +99,8 @@ export default function Home() {
             <p style={{ fontSize: 15, color: "oklch(93% 0.03 148)", marginBottom: 28, maxWidth: 480, marginLeft: "auto", marginRight: "auto" }}>
               Plan een gratis, vrijblijvende kennismaking — dan bekijken we samen wat bij jouw bedrijf past.
             </p>
-            <Link href="/contact" className="btn btn-primary">
-              Plan een gratis kennismaking
+            <Link href="/contact?mode=contact" className="btn btn-primary">
+              Stuur een bericht
             </Link>
           </div>
         </section>

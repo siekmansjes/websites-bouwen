@@ -5,7 +5,7 @@ import { ContactFlow } from "@/components/contact/ContactFlow";
 
 export const metadata: Metadata = {
   title: "Contact",
-  description: "Plan een gratis kennismaking of stel direct een offerte samen.",
+  description: "Stuur een bericht of stel direct een offerte samen.",
 };
 
 export default async function ContactPage({

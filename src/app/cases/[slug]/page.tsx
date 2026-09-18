@@ -83,8 +83,8 @@ export default async function CaseDetailPage({ params }: { params: Promise<{ slu
 
             <div style={{ marginTop: 44, padding: "28px 26px", background: "oklch(93% 0.03 148 / 0.35)", borderRadius: 8, textAlign: "center" }}>
               <p style={{ fontSize: 15, marginBottom: 16 }}>Ook benieuwd wat een nieuwe website voor jouw bedrijf kan doen?</p>
-              <Link href="/contact" className="btn btn-primary">
-                Plan een gratis kennismaking
+              <Link href="/contact?mode=contact" className="btn btn-primary">
+                Stuur een bericht
               </Link>
             </div>
           </div>
