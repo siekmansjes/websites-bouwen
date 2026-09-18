@@ -24,7 +24,7 @@ export function CaseStudyCard({ caseStudy }: { caseStudy: CaseStudy }) {
         </svg>
       </div>
       <div style={{ padding: "20px 22px", display: "flex", flexDirection: "column", gap: 10, flex: 1 }}>
-        <ExampleBadge />
+        {caseStudy.isExample && <ExampleBadge />}
         <h3 style={{ fontSize: 18 }}>{caseStudy.clientName}</h3>
         <span style={{ fontSize: 13, color: "oklch(52% 0.012 265)" }}>{caseStudy.sector}</span>
         <p style={{ fontSize: 14, lineHeight: 1.6, color: "oklch(52% 0.012 265)" }}>{caseStudy.result}</p>

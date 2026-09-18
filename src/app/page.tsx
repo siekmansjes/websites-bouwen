@@ -26,7 +26,8 @@ export default function Home() {
               <span className="eyebrow">Cases</span>
               <h2 style={{ fontSize: 34, marginTop: 10 }}>Zo ziet dat er in de praktijk uit</h2>
               <p style={{ fontSize: 14.5, color: "oklch(52% 0.012 265)", marginTop: 12 }}>
-                Deze cases zijn illustratief en worden binnenkort vervangen door echte klantverhalen.
+                De overige cases zijn illustratief en worden na verloop van tijd vervangen door echte
+                klantverhalen.
               </p>
             </div>
             <div className="grid-3">

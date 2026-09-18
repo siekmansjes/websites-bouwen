@@ -34,9 +34,11 @@ export default async function CaseDetailPage({ params }: { params: Promise<{ slu
             <Link href="/#cases" className="nav-link" style={{ fontSize: 13.5 }}>
               ← Alle cases
             </Link>
-            <div style={{ marginTop: 20, marginBottom: 12 }}>
-              <ExampleBadge label="Voorbeeldcase" />
-            </div>
+            {caseStudy.isExample && (
+              <div style={{ marginTop: 20, marginBottom: 12 }}>
+                <ExampleBadge label="Voorbeeldcase" />
+              </div>
+            )}
             <h1 style={{ fontSize: 38 }}>{caseStudy.clientName}</h1>
             <p style={{ fontSize: 14, color: "oklch(52% 0.012 265)", marginTop: 8 }}>{caseStudy.sector}</p>
 

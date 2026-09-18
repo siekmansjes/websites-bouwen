@@ -9,10 +9,24 @@ export type CaseStudy = {
   /** Doelgroep-label, gebruikt om cases te filteren op een doelgroep-landingspagina (bv. "coaches"). */
   audience: string;
   /** Markeert deze case als voorbeeldcontent — nog te vervangen door een echte case. */
-  isExample: true;
+  isExample: boolean;
 };
 
 export const caseStudies: CaseStudy[] = [
+  {
+    slug: "parkmade-configurator-en-koppelingen",
+    audience: "mkb-algemeen",
+    clientName: "Parkmade",
+    sector: "Merchandise & promotiematerialen voor vakantieparken",
+    problem:
+      "Voor elke aanvraag moest een vakantiepark los contact opnemen om prijzen, opties en een eigen ontwerp te bespreken — geen manier om zelf een assortiment samen te stellen of meteen te zien wat het zou kosten.",
+    solution:
+      "Een website met live productprijzen, een configurator waarmee een klant zelf producten en een eigen 2D-ontwerp samenstelt, een wensenlijst om die selectie te bewaren, en volledige koppelingen met HubSpot (CRM), agenda (kennismakingsgesprekken) en Moneybird (facturatie) zodat een aanvraag direct compleet en verwerkbaar binnenkomt.",
+    result:
+      "Een klant stelt zelf een assortiment samen, ziet direct de prijs, en een aanvraag hoeft aan onze kant niet meer handmatig te worden aangevuld of nagevraagd.",
+    image: "/cases/parkmade.svg",
+    isExample: false,
+  },
   {
     slug: "fysiotherapiepraktijk-automatische-intake",
     audience: "mkb-algemeen",
