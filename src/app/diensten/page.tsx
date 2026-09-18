@@ -79,7 +79,7 @@ export default function DienstenPage() {
               <span className="eyebrow">Losse opties</span>
               <h2 style={{ fontSize: 30, marginTop: 10 }}>Automatiseringen</h2>
               <p style={{ fontSize: 14.5, lineHeight: 1.6, color: "oklch(52% 0.012 265)", marginTop: 10 }}>
-                Voeg toe wat voor jouw praktijk zinvol is — via de knop &ldquo;Wensenlijst&rdquo; kun je een
+                Voeg toe wat voor jouw bedrijf zinvol is — via de knop &ldquo;Wensenlijst&rdquo; kun je een
                 selectie maken en die direct meesturen bij je offerteaanvraag.
               </p>
             </div>

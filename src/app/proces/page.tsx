@@ -30,7 +30,7 @@ export default function ProcesPage() {
         </section>
         <section className="ink-band" style={{ padding: "56px 0", textAlign: "center" }}>
           <div className="wrap">
-            <h2 style={{ fontSize: 28, marginBottom: 16 }}>Benieuwd hoe dit voor jouw praktijk werkt?</h2>
+            <h2 style={{ fontSize: 28, marginBottom: 16 }}>Benieuwd hoe dit voor jouw bedrijf werkt?</h2>
             <Link href="/contact" className="btn btn-primary">
               Plan een gratis kennismaking
             </Link>
