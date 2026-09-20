@@ -20,6 +20,36 @@ export default function Home() {
           description="Een heldere website met een duidelijk proces, eerlijke pakketten en automatisering die je tijd scheelt — zodat jij je kan focussen op je bedrijf in plaats van op administratie."
         />
 
+        <section style={{ padding: "0 0 64px" }}>
+          <div className="wrap">
+            <div
+              className="card"
+              style={{
+                padding: "32px 30px",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "space-between",
+                gap: 24,
+                flexWrap: "wrap",
+                borderColor: "oklch(42% 0.08 148)",
+                borderWidth: 2,
+              }}
+            >
+              <div style={{ flex: "1 1 380px" }}>
+                <span className="eyebrow">Gratis & vrijblijvend</span>
+                <h2 style={{ fontSize: 24, marginTop: 8 }}>Liever eerst zien hoe het eruitziet?</h2>
+                <p style={{ fontSize: 14.5, lineHeight: 1.6, color: "oklch(52% 0.012 265)", marginTop: 8 }}>
+                  Vertel in een paar zinnen wat je bedrijf doet, en binnen 48 uur staat er een echte,
+                  werkende voorbeeldwebsite in je mailbox. Kost niets, geen verplichtingen.
+                </p>
+              </div>
+              <Link href="/gratis-voorbeeld" className="btn btn-primary" style={{ flexShrink: 0 }}>
+                Vraag je gratis voorbeeld aan
+              </Link>
+            </div>
+          </div>
+        </section>
+
         <section id="cases" style={{ padding: "24px 0 72px" }}>
           <div className="wrap">
             <div style={{ textAlign: "center", maxWidth: 620, margin: "0 auto 44px" }}>
@@ -97,7 +127,7 @@ export default function Home() {
           <div className="wrap">
             <h2 style={{ fontSize: 32, marginBottom: 16 }}>Klaar voor een website die voor je werkt?</h2>
             <p style={{ fontSize: 15, color: "oklch(93% 0.03 148)", marginBottom: 28, maxWidth: 480, marginLeft: "auto", marginRight: "auto" }}>
-              Plan een gratis, vrijblijvende kennismaking — dan bekijken we samen wat bij jouw bedrijf past.
+              Stuur een bericht — dan bekijken we samen wat bij jouw bedrijf past.
             </p>
             <Link href="/contact?mode=contact" className="btn btn-primary">
               Stuur een bericht

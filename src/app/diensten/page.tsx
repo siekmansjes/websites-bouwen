@@ -70,6 +70,21 @@ export default function DienstenPage() {
                 {hostingPlan.priceLabel}
               </div>
             </div>
+            <div
+              style={{
+                marginTop: 16,
+                padding: "16px 20px",
+                borderLeft: "3px solid oklch(42% 0.08 148)",
+                background: "oklch(93% 0.03 148 / 0.25)",
+                borderRadius: "0 6px 6px 0",
+              }}
+            >
+              <p style={{ fontSize: 14, lineHeight: 1.6, color: "oklch(21% 0.015 265)" }}>
+                <strong>Je website blijft van jou.</strong> Stop je ooit met hosting & onderhoud bij mij, dan
+                blijft de site (en de broncode) gewoon jouw eigendom — geen abonnement dat je moet aanhouden
+                om je eigen website te kunnen gebruiken.
+              </p>
+            </div>
           </div>
         </section>
 
