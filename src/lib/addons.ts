@@ -3,6 +3,8 @@ export type AddonItem = {
   name: string;
   description: string;
   priceLabel: string;
+  /** Pakket-id's waar deze automatisering al standaard bij inbegrepen is — voorkomt dat een klant hem daar nog eens als betaalde extra toevoegt. */
+  includedInPackages?: string[];
 };
 
 export const addons: AddonItem[] = [
@@ -12,6 +14,7 @@ export const addons: AddonItem[] = [
     description:
       "Een slim intakeformulier dat de juiste vragen stelt en de antwoorden overzichtelijk naar je toestuurt, zodat je voorbereid aan een eerste gesprek begint.",
     priceLabel: "€150",
+    includedInPackages: ["groei", "op-maat"],
   },
   {
     id: "agenda-koppeling",
@@ -19,6 +22,7 @@ export const addons: AddonItem[] = [
     description:
       "Bezoekers plannen direct een kennismakingsgesprek in via Cal.com, zonder mailwisseling over beschikbaarheid.",
     priceLabel: "€150",
+    includedInPackages: ["groei", "op-maat"],
   },
   {
     id: "crm-koppeling",
@@ -26,6 +30,7 @@ export const addons: AddonItem[] = [
     description:
       "Nieuwe aanvragen komen automatisch binnen in HubSpot, inclusief alle ingevulde intake-informatie. Werk je met een ander CRM? Kan ook, als maatwerk tegen een aangepaste prijs.",
     priceLabel: "€150",
+    includedInPackages: ["op-maat"],
   },
   {
     id: "chatbot",

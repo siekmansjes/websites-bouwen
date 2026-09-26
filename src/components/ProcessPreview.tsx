@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 const milestones = [
-  { step: "1", title: "Kennismaking", text: "Een kort gesprek over je praktijk en wat je nodig hebt." },
+  { step: "1", title: "Kennismaking", text: "Een kort gesprek over je bedrijf en wat je nodig hebt." },
   { step: "2", title: "Bouw", text: "Ontwerp en bouw, inclusief de gekozen automatiseringen." },
   { step: "3", title: "Review", text: "Je bekijkt en beoordeelt het resultaat, ik verwerk je wijzigingen." },
   { step: "4", title: "Livegang", text: "Na jouw goedkeuring gaat de site live, met ondersteuning erna." },

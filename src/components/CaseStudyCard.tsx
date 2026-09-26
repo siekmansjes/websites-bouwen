@@ -30,6 +30,7 @@ export function CaseStudyCard({ caseStudy }: { caseStudy: CaseStudy }) {
         )}
       </div>
       <div style={{ padding: "20px 22px", display: "flex", flexDirection: "column", gap: 10, flex: 1 }}>
+        {caseStudy.ownProject && <ExampleBadge label="Eigen project" tone="own" />}
         {caseStudy.isExample && <ExampleBadge />}
         <h3 style={{ fontSize: 18 }}>{caseStudy.clientName}</h3>
         <span style={{ fontSize: 13, color: "oklch(52% 0.012 265)" }}>{caseStudy.sector}</span>

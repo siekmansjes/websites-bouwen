@@ -15,6 +15,7 @@ export const metadata: Metadata = {
   title: `${SITE_NAME} — websites voor coaches`,
   description:
     "Websites voor loopbaan- en persoonlijke coaches die bezoekers helpen de stap naar een eerste gesprek te zetten, met automatisering waar het scheelt.",
+  alternates: { canonical: "/voor-coaches" },
 };
 
 export default function VoorCoachesPage() {
@@ -102,10 +103,10 @@ export default function VoorCoachesPage() {
           <div className="wrap">
             <h2 style={{ fontSize: 32, marginBottom: 16 }}>Klaar voor een website die voor je werkt?</h2>
             <p style={{ fontSize: 15, color: "oklch(93% 0.03 148)", marginBottom: 28, maxWidth: 480, marginLeft: "auto", marginRight: "auto" }}>
-              Plan een gratis, vrijblijvende kennismaking — dan bekijken we samen wat bij jouw praktijk past.
+              Stuur een bericht — dan bekijken we samen wat bij jouw praktijk past.
             </p>
-            <Link href="/contact" className="btn btn-primary">
-              Plan een gratis kennismaking
+            <Link href="/contact?mode=contact" className="btn btn-primary">
+              Stuur een bericht
             </Link>
           </div>
         </section>

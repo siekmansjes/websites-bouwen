@@ -18,6 +18,10 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return {
     title: caseStudy.clientName,
     description: caseStudy.result,
+    alternates: { canonical: `/cases/${caseStudy.slug}` },
+    // Illustratieve cases zijn nog geen echte klantverhalen — die willen we
+    // niet laten indexeren totdat ze vervangen zijn door echte cases.
+    robots: caseStudy.isExample ? { index: false, follow: true } : undefined,
   };
 }
 
@@ -35,13 +39,28 @@ export default async function CaseDetailPage({ params }: { params: Promise<{ slu
             <Link href="/#cases" className="nav-link" style={{ fontSize: 13.5 }}>
               ← Alle cases
             </Link>
-            {caseStudy.isExample && (
+            {(caseStudy.ownProject || caseStudy.isExample) && (
               <div style={{ marginTop: 20, marginBottom: 12 }}>
-                <ExampleBadge label="Voorbeeldcase" />
+                {caseStudy.ownProject && <ExampleBadge label="Eigen project" tone="own" />}
+                {caseStudy.isExample && <ExampleBadge label="Voorbeeldcase" />}
               </div>
             )}
             <h1 style={{ fontSize: 38 }}>{caseStudy.clientName}</h1>
             <p style={{ fontSize: 14, color: "oklch(52% 0.012 265)", marginTop: 8 }}>{caseStudy.sector}</p>
+            {caseStudy.ownProject && (
+              <p style={{ fontSize: 14, lineHeight: 1.6, color: "oklch(52% 0.012 265)", marginTop: 10, maxWidth: 560 }}>
+                Parkmade is mijn eigen bedrijf — deze website heb ik voor mezelf gebouwd, niet voor een externe
+                klant. Deze case laat zien wat ik daarbij heb opgezet.
+                {caseStudy.liveUrl && (
+                  <>
+                    {" "}
+                    <a href={caseStudy.liveUrl} target="_blank" rel="noopener noreferrer" style={{ fontWeight: 600 }}>
+                      Bekijk de live website ↗
+                    </a>
+                  </>
+                )}
+              </p>
+            )}
 
             <div
               style={{
@@ -57,7 +76,7 @@ export default async function CaseDetailPage({ params }: { params: Promise<{ slu
               }}
             >
               {caseStudy.image ? (
-                <Image src={caseStudy.image} alt={caseStudy.clientName} fill style={{ objectFit: "cover" }} />
+                <Image src={caseStudy.image} alt={caseStudy.clientName} fill style={{ objectFit: "cover", objectPosition: "top" }} />
               ) : (
                 <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="oklch(34% 0.075 148)" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round">
                   <rect x="3" y="4" width="18" height="14" rx="2" />
@@ -65,6 +84,22 @@ export default async function CaseDetailPage({ params }: { params: Promise<{ slu
                 </svg>
               )}
             </div>
+            {caseStudy.mobileImage && (
+              <div style={{ display: "flex", justifyContent: "center", marginTop: -16, marginBottom: 32 }}>
+                <div
+                  style={{
+                    position: "relative",
+                    width: 220,
+                    aspectRatio: "390 / 844",
+                    borderRadius: 16,
+                    overflow: "hidden",
+                    border: "1px solid oklch(90% 0.006 90)",
+                  }}
+                >
+                  <Image src={caseStudy.mobileImage} alt={`${caseStudy.clientName} — mobiele weergave`} fill style={{ objectFit: "cover", objectPosition: "top" }} />
+                </div>
+              </div>
+            )}
 
             <div style={{ display: "flex", flexDirection: "column", gap: 28 }}>
               <div>
@@ -75,6 +110,18 @@ export default async function CaseDetailPage({ params }: { params: Promise<{ slu
                 <h2 style={{ fontSize: 20, marginBottom: 8 }}>De oplossing</h2>
                 <p style={{ fontSize: 15, lineHeight: 1.7, color: "oklch(21% 0.015 265)" }}>{caseStudy.solution}</p>
               </div>
+              {caseStudy.capabilities && (
+                <div>
+                  <h2 style={{ fontSize: 20, marginBottom: 8 }}>Concrete functionaliteiten</h2>
+                  <ul style={{ margin: 0, paddingLeft: 20, display: "flex", flexDirection: "column", gap: 6 }}>
+                    {caseStudy.capabilities.map((item) => (
+                      <li key={item} style={{ fontSize: 15, lineHeight: 1.7, color: "oklch(21% 0.015 265)" }}>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
               <div>
                 <h2 style={{ fontSize: 20, marginBottom: 8 }}>Het resultaat</h2>
                 <p style={{ fontSize: 15, lineHeight: 1.7, color: "oklch(21% 0.015 265)" }}>{caseStudy.result}</p>

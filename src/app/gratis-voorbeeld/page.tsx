@@ -6,6 +6,7 @@ import { PreviewRequestForm } from "@/components/contact/PreviewRequestForm";
 export const metadata: Metadata = {
   title: "Gratis voorbeeldwebsite",
   description: "Vertel in een paar zinnen wat je bedrijf doet, en krijg binnen 48 uur een echte, werkende voorbeeldwebsite — gratis en vrijblijvend.",
+  alternates: { canonical: "/gratis-voorbeeld" },
 };
 
 export default function GratisVoorbeeldPage() {

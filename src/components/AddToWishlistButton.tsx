@@ -19,7 +19,7 @@ export function AddToWishlistButton({ item }: { item: WishlistItem }) {
         color: active ? "oklch(42% 0.08 148)" : "oklch(21% 0.015 265)",
       }}
     >
-      {active ? "✓ Op wensenlijst" : "+ Wensenlijst"}
+      {active ? "✓ In mijn selectie" : "+ Mijn selectie"}
     </button>
   );
 }

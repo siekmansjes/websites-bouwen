@@ -7,6 +7,7 @@ import { BenefitsGrid } from "@/components/BenefitsGrid";
 export const metadata: Metadata = {
   title: "Over mij",
   description: "Waarom ik websites bouw voor MKB'ers.",
+  alternates: { canonical: "/over-mij" },
 };
 
 export default function OverMijPage() {
@@ -20,12 +21,16 @@ export default function OverMijPage() {
             <h1 style={{ fontSize: 40, marginTop: 10 }}>Mark — websites voor MKB&apos;ers</h1>
             <div style={{ display: "flex", flexDirection: "column", gap: 20, marginTop: 24 }}>
               <p style={{ fontSize: 15.5, lineHeight: 1.7, color: "oklch(21% 0.015 265)" }}>
-                Voordat ik websites voor anderen bouwde, bouwde ik ze voor mezelf. Met Parkmade lever ik
-                bedrukte merchandise en verkoopdisplays aan meer dan 15 vakantieparken, en eerder werkte ik
-                als merchandise-professional voor onder meer de Efteling en grote retailers als Jumbo en
-                Albert Heijn. Die achtergrond leerde me wat een website voor een klein bedrijf eigenlijk moet
-                doen. Niet mooi zijn om mooi te zijn, maar aanvragen opleveren en tijd schelen. Precies dat
-                neem ik mee naar elk traject dat ik voor een klant bouw.
+                Voordat ik websites voor anderen bouwde, bouwde ik er één voor mezelf: met Parkmade lever ik
+                bedrukte merchandise en verkoopdisplays aan vakantieparken. Daarnaast werkte ik eerder als
+                merchandise-professional, onder meer bij de Efteling en grote retailers als Jumbo en Albert
+                Heijn{" "}
+                <em style={{ fontStyle: "normal", color: "oklch(52% 0.012 265)" }}>
+                  (dit is werkervaring, geen klant van dit websitebouw-bedrijf)
+                </em>
+                . Die achtergrond leerde me wat een website voor een klein bedrijf eigenlijk moet doen: niet
+                mooi zijn om mooi te zijn, maar aanvragen opleveren en tijd schelen. Precies dat neem ik mee
+                naar elk traject dat ik voor een klant bouw.
               </p>
               <p style={{ fontSize: 15.5, lineHeight: 1.7, color: "oklch(21% 0.015 265)" }}>
                 Ik werk bewust met een beperkt aantal klanten tegelijk, zodat er echt tijd is voor

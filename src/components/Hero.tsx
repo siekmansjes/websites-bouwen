@@ -1,13 +1,22 @@
 import Link from "next/link";
 
+type HeroCta = { label: string; href: string };
+
+const DEFAULT_PRIMARY_CTA: HeroCta = { label: "Stuur een bericht", href: "/contact?mode=contact" };
+const DEFAULT_SECONDARY_CTA: HeroCta = { label: "Bekijk voorbeeldcases", href: "#cases" };
+
 export function Hero({
   eyebrow,
   title,
   description,
+  primaryCta = DEFAULT_PRIMARY_CTA,
+  secondaryCta = DEFAULT_SECONDARY_CTA,
 }: {
   eyebrow: string;
   title: string;
   description: string;
+  primaryCta?: HeroCta;
+  secondaryCta?: HeroCta;
 }) {
   return (
     <section style={{ padding: "72px 0 88px" }}>
@@ -19,11 +28,11 @@ export function Hero({
             {description}
           </p>
           <div style={{ display: "flex", gap: 12, flexWrap: "wrap", marginTop: 6 }}>
-            <Link href="/contact?mode=contact" className="btn btn-primary">
-              Stuur een bericht
+            <Link href={primaryCta.href} className="btn btn-primary">
+              {primaryCta.label}
             </Link>
-            <Link href="#cases" className="btn btn-secondary">
-              Bekijk voorbeeldcases
+            <Link href={secondaryCta.href} className="btn btn-secondary">
+              {secondaryCta.label}
             </Link>
           </div>
         </div>

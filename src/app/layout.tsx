@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Lora, Inter } from "next/font/google";
 import { WishlistProvider } from "@/lib/wishlist/WishlistContext";
-import { SITE_URL } from "@/lib/site";
+import { IS_PRODUCTION, SITE_URL } from "@/lib/site";
 import "./globals.css";
 
 const displayFont = Lora({
@@ -25,6 +25,10 @@ export const metadata: Metadata = {
   title,
   description,
   alternates: { canonical: "/" },
+  // Zolang er geen productiedomein is ingesteld (IS_PRODUCTION), staat de
+  // hele site standaard op noindex — elke pagina kan dit overschrijven via
+  // zijn eigen `metadata.robots`, maar dat is nu nergens nodig.
+  robots: IS_PRODUCTION ? { index: true, follow: true } : { index: false, follow: true },
   openGraph: {
     title,
     description,
@@ -32,9 +36,10 @@ export const metadata: Metadata = {
     siteName: "[BEDRIJFSNAAM]",
     locale: "nl_NL",
     type: "website",
+    images: [{ url: "/opengraph-image", width: 1200, height: 630 }],
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title,
     description,
   },

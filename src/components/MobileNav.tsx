@@ -7,7 +7,7 @@ const links = [
   { href: "/", label: "Home" },
   { href: "/#cases", label: "Cases" },
   { href: "/proces", label: "Proces" },
-  { href: "/diensten", label: "Diensten" },
+  { href: "/diensten", label: "Pakketten & prijzen" },
   { href: "/over-mij", label: "Over mij" },
   { href: "/contact", label: "Contact" },
 ];

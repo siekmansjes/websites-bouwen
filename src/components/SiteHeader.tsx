@@ -63,7 +63,7 @@ export function SiteHeader() {
               Proces
             </Link>
             <Link href="/diensten" className="nav-link" style={{ color: "oklch(21% 0.015 265)" }}>
-              Diensten
+              Pakketten &amp; prijzen
             </Link>
             <Link href="/over-mij" className="nav-link" style={{ color: "oklch(21% 0.015 265)" }}>
               Over mij

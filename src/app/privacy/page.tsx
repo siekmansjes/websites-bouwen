@@ -6,6 +6,7 @@ import { SITE_NAME, CONTACT_EMAIL, KVK_NUMBER } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Privacybeleid",
   description: `Hoe ${SITE_NAME} omgaat met persoonsgegevens die via deze website worden verzameld.`,
+  alternates: { canonical: "/privacy" },
 };
 
 const sectionHeadingStyle = { fontSize: 21, marginTop: 40, marginBottom: 12 };
@@ -20,7 +21,9 @@ export default function PrivacyPage() {
         <div className="wrap" style={{ maxWidth: 760 }}>
           <span className="eyebrow">Privacybeleid</span>
           <h1 style={{ fontSize: 40, marginTop: 10 }}>Privacybeleid</h1>
-          <p style={{ fontSize: 14, color: "oklch(52% 0.012 265)", marginTop: 10 }}>Laatst bijgewerkt: [DATUM]</p>
+          <p style={{ fontSize: 14, color: "oklch(52% 0.012 265)", marginTop: 10 }}>
+            Laatst bijgewerkt: wordt ingevuld bij livegang
+          </p>
 
           <p style={{ ...paragraphStyle, marginTop: 24 }}>
             Dit privacybeleid legt uit welke persoonsgegevens {SITE_NAME} verzamelt via deze website, waarom,
@@ -37,7 +40,7 @@ export default function PrivacyPage() {
           <h2 style={sectionHeadingStyle}>2. Welke gegevens verzamelen wij</h2>
           <p style={paragraphStyle}>Via het contact- en offerteformulier op deze website kunnen de volgende gegevens worden verzameld:</p>
           <ul style={listStyle}>
-            <li>Naam en (praktijk)naam</li>
+            <li>Naam en (bedrijfs)naam</li>
             <li>E-mailadres</li>
             <li>Bericht, gekozen pakket en eventueel geselecteerde automatiseringsopties</li>
           </ul>
@@ -56,8 +59,9 @@ export default function PrivacyPage() {
 
           <h2 style={sectionHeadingStyle}>5. Delen met derden</h2>
           <p style={paragraphStyle}>
-            Uw gegevens worden niet verkocht aan derden. [Aan te vullen zodra bekend is welke tools/CRM
-            worden gebruikt om aanvragen te verwerken.]
+            Uw gegevens worden niet verkocht aan derden. Om aanvragen te verwerken gebruik ik HubSpot als
+            CRM — uw gegevens uit het contact-, offerte- of aanvraagformulier komen daar binnen zodat ik
+            erop kan reageren.
           </p>
 
           <h2 style={sectionHeadingStyle}>6. Uw rechten</h2>

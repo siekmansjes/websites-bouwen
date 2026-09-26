@@ -31,7 +31,7 @@ export function SiteFooter() {
             Proces
           </Link>
           <Link href="/diensten" className="nav-link" style={footerLinkStyle}>
-            Diensten
+            Pakketten &amp; prijzen
           </Link>
           <Link href="/over-mij" className="nav-link" style={footerLinkStyle}>
             Over mij
@@ -39,7 +39,7 @@ export function SiteFooter() {
         </div>
 
         <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-          <span style={columnHeadingStyle}>Diensten</span>
+          <span style={columnHeadingStyle}>Pakketten &amp; prijzen</span>
           <Link href="/diensten#pakketten" className="nav-link" style={footerLinkStyle}>
             Pakketten
           </Link>

@@ -32,7 +32,7 @@ export function PackageCard({ pkg }: { pkg: PackageTier }) {
             textTransform: "uppercase",
           }}
         >
-          Meest gekozen
+          Aanbevolen
         </span>
       )}
       <div>
@@ -40,8 +40,11 @@ export function PackageCard({ pkg }: { pkg: PackageTier }) {
         <p style={{ fontSize: 13.5, color: "oklch(52% 0.012 265)", marginTop: 4 }}>{pkg.tagline}</p>
       </div>
       <div>
-        <div style={{ fontFamily: "var(--font-display), serif", fontSize: 28, fontWeight: 700 }}>{pkg.priceLabel}</div>
-        <div style={{ fontSize: 12.5, color: "oklch(52% 0.012 265)", marginTop: 2 }}>{HOSTING_PRICE_NOTE}</div>
+        <div style={{ display: "flex", alignItems: "baseline", gap: 6 }}>
+          <span style={{ fontFamily: "var(--font-display), serif", fontSize: 28, fontWeight: 700 }}>{pkg.priceLabel}</span>
+          <span style={{ fontSize: 12, color: "oklch(52% 0.012 265)" }}>eenmalig</span>
+        </div>
+        <div style={{ fontSize: 12.5, color: "oklch(52% 0.012 265)", marginTop: 2 }}>{HOSTING_PRICE_NOTE}, doorlopend</div>
       </div>
       <ul style={{ margin: 0, padding: 0, listStyle: "none", display: "flex", flexDirection: "column", gap: 10, flex: 1 }}>
         {pkg.features.map((feature) => (

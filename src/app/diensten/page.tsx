@@ -8,8 +8,9 @@ import { addons } from "@/lib/addons";
 import { hostingPlan } from "@/lib/hosting";
 
 export const metadata: Metadata = {
-  title: "Diensten",
+  title: "Pakketten & prijzen",
   description: "Pakketten en losse automatiseringsopties voor je website.",
+  alternates: { canonical: "/diensten" },
 };
 
 export default function DienstenPage() {
@@ -66,8 +67,11 @@ export default function DienstenPage() {
                   </li>
                 ))}
               </ul>
-              <div style={{ fontFamily: "var(--font-display), serif", fontSize: 26, fontWeight: 700, flexShrink: 0 }}>
-                {hostingPlan.priceLabel}
+              <div style={{ textAlign: "right", flexShrink: 0 }}>
+                <div style={{ fontFamily: "var(--font-display), serif", fontSize: 26, fontWeight: 700 }}>
+                  {hostingPlan.priceLabel}
+                </div>
+                <div style={{ fontSize: 12, color: "oklch(52% 0.012 265)" }}>doorlopend, naast de eenmalige pakketprijs</div>
               </div>
             </div>
             <div
@@ -94,8 +98,9 @@ export default function DienstenPage() {
               <span className="eyebrow">Losse opties</span>
               <h2 style={{ fontSize: 30, marginTop: 10 }}>Automatiseringen</h2>
               <p style={{ fontSize: 14.5, lineHeight: 1.6, color: "oklch(52% 0.012 265)", marginTop: 10 }}>
-                Voeg toe wat voor jouw bedrijf zinvol is — via de knop &ldquo;Wensenlijst&rdquo; kun je een
-                selectie maken en die direct meesturen bij je offerteaanvraag.
+                Voeg toe wat voor jouw bedrijf zinvol is — via de knop &ldquo;Mijn selectie&rdquo; stel je je
+                website samen en stuur je die direct mee bij je offerteaanvraag. Let op: een deel van deze
+                opties zit al inbegrepen bij Groei of Compleet — dat zie je terug zodra je een pakket kiest.
               </p>
             </div>
             <div className="grid-3">

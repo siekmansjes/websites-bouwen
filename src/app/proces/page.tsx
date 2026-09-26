@@ -7,6 +7,7 @@ import { ProcessTimeline } from "@/components/ProcessTimeline";
 export const metadata: Metadata = {
   title: "Proces",
   description: "Hoe een traject van kennismaking tot livegang eruitziet.",
+  alternates: { canonical: "/proces" },
 };
 
 export default function ProcesPage() {

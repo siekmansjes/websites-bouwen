@@ -9,9 +9,9 @@ export function WishlistIndicator({ className }: { className?: string }) {
 
   return (
     <Link
-      href="/contact?mode=offerte&source=wensenlijst"
+      href="/contact?mode=offerte&source=selectie"
       className={className}
-      aria-label={shown > 0 ? `Wensenlijst, ${shown} optie${shown === 1 ? "" : "s"}` : "Wensenlijst"}
+      aria-label={shown > 0 ? `Mijn selectie, ${shown} optie${shown === 1 ? "" : "s"}` : "Mijn selectie"}
       style={{ position: "relative", display: "inline-flex", color: "oklch(21% 0.015 265)" }}
     >
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">

@@ -7,26 +7,57 @@ export type CaseStudy = {
   result: string;
   /** Alleen zetten als er een echte foto in public/cases/ staat. */
   image?: string;
+  /** Optioneel: schermafbeelding van de mobiele weergave, naast `image` (desktop). */
+  mobileImage?: string;
   /** Doelgroep-label, gebruikt om cases te filteren op een doelgroep-landingspagina (bv. "coaches"). */
   audience: string;
   /** Markeert deze case als voorbeeldcontent — nog te vervangen door een echte case. */
   isExample: boolean;
+  /** Markeert dat dit een eigen project van de websitebouwer is (geen externe klant). */
+  ownProject?: boolean;
+  /** Concrete, zelf geobserveerde functionaliteiten — alleen items die ik op de live site heb gezien, niet alleen in code. */
+  capabilities?: string[];
+  /** Optioneel: link naar de publiek bereikbare website, alleen zetten als die daadwerkelijk live staat. */
+  liveUrl?: string;
 };
 
+/**
+ * Interne verificatienotitie bij Parkmade (26-09-2026, niet publiek tonen):
+ * live op https://vakantiepark-website.vercel.app/ (parkmade.nl zelf is nog
+ * een geparkeerd TransIP-domein, niet de werkende site). Op de live site
+ * zelf gezien en dus bevestigd: productoverzicht, wensenlijst/samplebox
+ * (bevestigd via de eigen cookiemelding van de site), offerteformulier met
+ * naam/bedrijfsnaam/e-mail/telefoon + optioneel logo-upload. NIET bevestigd,
+ * alleen in de broncode van de vakantiepark-website-repo aangetroffen (dus
+ * niet operationeel getest, daarom hier niet als functionaliteit vermeld):
+ * of de formulieren daadwerkelijk in HubSpot binnenkomen. NIET in de code
+ * aangetroffen (dus niet gebouwd): een 2D-ontwerpconfigurator, een
+ * agenda-koppeling (Cal.com), een Moneybird-facturatiekoppeling — die
+ * stonden eerder wel in de case-tekst, dat was onjuist.
+ */
 export const caseStudies: CaseStudy[] = [
   {
-    slug: "parkmade-configurator-en-koppelingen",
+    slug: "parkmade-eigen-website",
     audience: "mkb-algemeen",
     clientName: "Parkmade",
     sector: "Merchandise & promotiematerialen voor vakantieparken",
-    problem:
-      "Voor elke aanvraag moest een vakantiepark los contact opnemen om prijzen, opties en een eigen ontwerp te bespreken — geen manier om zelf een assortiment samen te stellen of meteen te zien wat het zou kosten.",
-    solution:
-      "Een website met live productprijzen, een configurator waarmee een klant zelf producten en een eigen 2D-ontwerp samenstelt, een wensenlijst om die selectie te bewaren, en volledige koppelingen met HubSpot (CRM), agenda (kennismakingsgesprekken) en Moneybird (facturatie) zodat een aanvraag direct compleet en verwerkbaar binnenkomt.",
-    result:
-      "Een klant stelt zelf een assortiment samen, ziet direct de prijs, en een aanvraag hoeft aan onze kant niet meer handmatig te worden aangevuld of nagevraagd.",
-    image: "/cases/parkmade.webp",
+    ownProject: true,
     isExample: false,
+    liveUrl: "https://vakantiepark-website.vercel.app/",
+    problem:
+      "Voor Parkmade — mijn eigen bedrijf in bedrukte merchandise voor vakantieparken — moest elke aanvraag los per e-mail of telefoon worden besproken: geen manier voor een klant om zelf een assortiment samen te stellen of een aanvraag compleet aan te leveren.",
+    solution:
+      "Ik heb voor mijn eigen bedrijf een website gebouwd met een productoverzicht en een wensenlijst waarmee een klant zelf producten selecteert en bewaart, en een offerteformulier dat die selectie automatisch voorstelt.",
+    capabilities: [
+      "Productoverzicht per categorie, met kenmerken en specificaties per artikel",
+      "Wensenlijst/samplebox: producten toevoegen, bewaard per browser, blijft behouden tussen paginabezoeken",
+      "Offerteformulier dat de samengestelde productlijst automatisch voorstelt, met naam, bedrijfsnaam, e-mail en telefoon",
+      "Optioneel bestandsveld om een logo of huisstijl aan te leveren bij een aanvraag",
+    ],
+    result:
+      "Een bezoeker kan zelf een assortiment samenstellen en bewaren, en die selectie in één keer meesturen bij een aanvraag — in plaats van dat alles los per e-mail besproken moet worden.",
+    image: "/cases/parkmade-website-desktop.png",
+    mobileImage: "/cases/parkmade-website-mobile.png",
   },
   {
     slug: "fysiotherapiepraktijk-automatische-intake",

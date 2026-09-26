@@ -5,89 +5,90 @@ import { Hero } from "@/components/Hero";
 import { ProcessPreview } from "@/components/ProcessPreview";
 import { CaseStudyCard } from "@/components/CaseStudyCard";
 import { PackageCard } from "@/components/PackageCard";
+import { BenefitsGrid } from "@/components/BenefitsGrid";
+import { Faq } from "@/components/Faq";
 import { caseStudies } from "@/lib/cases";
 import { packages } from "@/lib/packages";
 import { addons } from "@/lib/addons";
 
 export default function Home() {
+  const parkmadeCase = caseStudies.find((caseStudy) => caseStudy.ownProject);
+  const otherCases = caseStudies.filter((caseStudy) => !caseStudy.ownProject).slice(0, 2);
+
   return (
     <>
       <SiteHeader />
       <main>
         <Hero
           eyebrow="Websites voor MKB'ers"
-          title="Een website die mensen helpt de stap naar jou te zetten"
-          description="Een heldere website met een duidelijk proces, eerlijke pakketten en automatisering die je tijd scheelt — zodat jij je kan focussen op je bedrijf in plaats van op administratie."
+          title="Een professionele website voor je bedrijf, met een pakket dat past"
+          description="Ik bouw websites voor MKB-bedrijven: drie duidelijke pakketten, eerlijke prijzen en optionele automatisering die je tijd scheelt — zodat jij je kan focussen op je bedrijf in plaats van op administratie."
+          primaryCta={{ label: "Vraag een voorstel aan", href: "/contact?mode=offerte" }}
+          secondaryCta={{ label: "Bekijk pakketten", href: "#pakketten" }}
         />
 
-        <section style={{ padding: "0 0 64px" }}>
-          <div className="wrap">
-            <div
-              className="card"
-              style={{
-                padding: "32px 30px",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "space-between",
-                gap: 24,
-                flexWrap: "wrap",
-                borderColor: "oklch(42% 0.08 148)",
-                borderWidth: 2,
-              }}
-            >
-              <div style={{ flex: "1 1 380px" }}>
-                <span className="eyebrow">Gratis & vrijblijvend</span>
-                <h2 style={{ fontSize: 24, marginTop: 8 }}>Liever eerst zien hoe het eruitziet?</h2>
-                <p style={{ fontSize: 14.5, lineHeight: 1.6, color: "oklch(52% 0.012 265)", marginTop: 8 }}>
-                  Vertel in een paar zinnen wat je bedrijf doet, en binnen 48 uur staat er een echte,
-                  werkende voorbeeldwebsite in je mailbox. Kost niets, geen verplichtingen.
+        {parkmadeCase && (
+          <section id="cases" style={{ padding: "0 0 72px" }}>
+            <div className="wrap">
+              <div style={{ textAlign: "center", maxWidth: 620, margin: "0 auto 36px" }}>
+                <span className="eyebrow">Eigen project</span>
+                <h2 style={{ fontSize: 32, marginTop: 10 }}>Dit is wat ik zelf heb gebouwd</h2>
+                <p style={{ fontSize: 14.5, color: "oklch(52% 0.012 265)", marginTop: 12 }}>
+                  Parkmade is mijn eigen bedrijf — de eerste echte praktijkcase van een website die ik heb
+                  gebouwd, geen externe klant.
                 </p>
               </div>
-              <Link href="/gratis-voorbeeld" className="btn btn-primary" style={{ flexShrink: 0 }}>
-                Vraag je gratis voorbeeld aan
-              </Link>
-            </div>
-          </div>
-        </section>
+              <div className="grid-2" style={{ maxWidth: 900, margin: "0 auto" }}>
+                <CaseStudyCard caseStudy={parkmadeCase} />
+                <div style={{ display: "flex", flexDirection: "column", gap: 14, justifyContent: "center" }}>
+                  {parkmadeCase.capabilities?.slice(0, 3).map((item) => (
+                    <div key={item} style={{ display: "flex", gap: 10, fontSize: 14.5 }}>
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="oklch(42% 0.08 148)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: 3 }}>
+                        <path d="M20 6 9 17l-5-5" />
+                      </svg>
+                      <span>{item}</span>
+                    </div>
+                  ))}
+                  <Link href={`/cases/${parkmadeCase.slug}`} className="btn btn-secondary" style={{ marginTop: 8, alignSelf: "flex-start" }}>
+                    Bekijk de volledige case
+                  </Link>
+                </div>
+              </div>
 
-        <section id="cases" style={{ padding: "24px 0 72px" }}>
+              {otherCases.length > 0 && (
+                <div style={{ marginTop: 48 }}>
+                  <p style={{ fontSize: 13, color: "oklch(52% 0.012 265)", textAlign: "center", marginBottom: 20 }}>
+                    De cases hieronder zijn illustratief en laten zien wat er mogelijk is — nog geen echte
+                    klantverhalen.
+                  </p>
+                  <div className="grid-2" style={{ maxWidth: 700, margin: "0 auto" }}>
+                    {otherCases.map((caseStudy) => (
+                      <CaseStudyCard key={caseStudy.slug} caseStudy={caseStudy} />
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+          </section>
+        )}
+
+        <section style={{ padding: "0 0 72px", background: "oklch(93% 0.03 148 / 0.25)" }}>
           <div className="wrap">
-            <div style={{ textAlign: "center", maxWidth: 620, margin: "0 auto 44px" }}>
-              <span className="eyebrow">Cases</span>
-              <h2 style={{ fontSize: 34, marginTop: 10 }}>Zo ziet dat er in de praktijk uit</h2>
-              <p style={{ fontSize: 14.5, color: "oklch(52% 0.012 265)", marginTop: 12 }}>
-                De overige cases zijn illustratief en worden na verloop van tijd vervangen door echte
-                klantverhalen.
-              </p>
+            <div style={{ textAlign: "center", maxWidth: 620, margin: "0 auto 36px" }}>
+              <span className="eyebrow">Waarom</span>
+              <h2 style={{ fontSize: 32, marginTop: 10 }}>Wat je van mij mag verwachten</h2>
             </div>
-            <div className="grid-3">
-              {caseStudies.slice(0, 3).map((caseStudy) => (
-                <CaseStudyCard key={caseStudy.slug} caseStudy={caseStudy} />
-              ))}
-            </div>
+            <BenefitsGrid />
           </div>
         </section>
 
-        <section className="ink-band" style={{ padding: "64px 0" }}>
-          <div className="wrap">
-            <div style={{ textAlign: "center", maxWidth: 620, margin: "0 auto 44px" }}>
-              <span className="eyebrow" style={{ color: "oklch(93% 0.03 148)" }}>
-                Hoe het werkt
-              </span>
-              <h2 style={{ fontSize: 34, marginTop: 10 }}>Van kennismaking tot livegang</h2>
-            </div>
-            <ProcessPreview />
-          </div>
-        </section>
-
-        <section id="pakketten" style={{ padding: "72px 0" }}>
+        <section id="pakketten" style={{ padding: "72px 0 40px" }}>
           <div className="wrap">
             <div style={{ textAlign: "center", maxWidth: 620, margin: "0 auto 44px" }}>
               <span className="eyebrow">Pakketten</span>
               <h2 style={{ fontSize: 34, marginTop: 10 }}>Kies wat bij je bedrijf past</h2>
               <p style={{ fontSize: 14.5, color: "oklch(52% 0.012 265)", marginTop: 12 }}>
-                Starter is een lichte eerste indruk. De meeste MKB&apos;ers kiezen Groei: de automatiseringen
-                besparen vaak al binnen een maand meer tijd dan het prijsverschil met Starter.
+                Drie pakketten, eenmalig geprijsd. Hosting & onderhoud komt daar apart bovenop.
               </p>
             </div>
             <div className="grid-3">
@@ -95,9 +96,14 @@ export default function Home() {
                 <PackageCard key={pkg.id} pkg={pkg} />
               ))}
             </div>
-            <div className="card" style={{ marginTop: 40, padding: "26px 28px", display: "flex", alignItems: "center", justifyContent: "space-between", gap: 24, flexWrap: "wrap" }}>
+          </div>
+        </section>
+
+        <section style={{ padding: "24px 0 72px" }}>
+          <div className="wrap">
+            <div className="card" style={{ padding: "26px 28px", display: "flex", alignItems: "center", justifyContent: "space-between", gap: 24, flexWrap: "wrap" }}>
               <div style={{ display: "flex", flexDirection: "column", gap: 10, flex: "1 1 320px" }}>
-                <h3 style={{ fontSize: 18 }}>Vul aan met losse automatiseringen</h3>
+                <h3 style={{ fontSize: 18 }}>Extra mogelijkheden: losse automatiseringen</h3>
                 <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
                   {addons.slice(0, 4).map((addon) => (
                     <span
@@ -123,15 +129,74 @@ export default function Home() {
           </div>
         </section>
 
+        <section className="ink-band" style={{ padding: "64px 0" }}>
+          <div className="wrap">
+            <div style={{ textAlign: "center", maxWidth: 620, margin: "0 auto 44px" }}>
+              <span className="eyebrow" style={{ color: "oklch(93% 0.03 148)" }}>
+                Hoe het werkt
+              </span>
+              <h2 style={{ fontSize: 34, marginTop: 10 }}>Van kennismaking tot livegang</h2>
+            </div>
+            <ProcessPreview />
+            <div style={{ textAlign: "center", marginTop: 32, fontSize: 14, color: "oklch(85% 0.02 150)" }}>
+              Benieuwd wie er achter deze website-bouw zit?{" "}
+              <Link href="/over-mij">Lees meer over mij</Link>.
+            </div>
+          </div>
+        </section>
+
+        <section id="faq" style={{ padding: "72px 0" }}>
+          <div className="wrap">
+            <div style={{ textAlign: "center", maxWidth: 620, margin: "0 auto 36px" }}>
+              <span className="eyebrow">Veelgestelde vragen</span>
+              <h2 style={{ fontSize: 32, marginTop: 10 }}>Wat je vooraf wil weten</h2>
+            </div>
+            <Faq />
+          </div>
+        </section>
+
+        <section style={{ padding: "0 0 72px" }}>
+          <div className="wrap">
+            <div
+              className="card"
+              style={{
+                padding: "26px 28px",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "space-between",
+                gap: 24,
+                flexWrap: "wrap",
+              }}
+            >
+              <div style={{ flex: "1 1 380px" }}>
+                <span className="eyebrow">Gratis & vrijblijvend</span>
+                <h3 style={{ fontSize: 19, marginTop: 6 }}>Liever eerst zien hoe het eruitziet?</h3>
+                <p style={{ fontSize: 14, lineHeight: 1.6, color: "oklch(52% 0.012 265)", marginTop: 6 }}>
+                  Vertel in een paar zinnen wat je bedrijf doet, en binnen 48 uur staat er een echte, werkende
+                  voorbeeldwebsite in je mailbox. Kost niets, geen verplichtingen.
+                </p>
+              </div>
+              <Link href="/gratis-voorbeeld" className="btn btn-secondary" style={{ flexShrink: 0 }}>
+                Vraag je gratis voorbeeld aan
+              </Link>
+            </div>
+          </div>
+        </section>
+
         <section className="ink-band" style={{ padding: "64px 0", textAlign: "center" }}>
           <div className="wrap">
             <h2 style={{ fontSize: 32, marginBottom: 16 }}>Klaar voor een website die voor je werkt?</h2>
             <p style={{ fontSize: 15, color: "oklch(93% 0.03 148)", marginBottom: 28, maxWidth: 480, marginLeft: "auto", marginRight: "auto" }}>
-              Stuur een bericht — dan bekijken we samen wat bij jouw bedrijf past.
+              Vraag een voorstel aan, of stuur eerst een bericht als je nog vragen hebt.
             </p>
-            <Link href="/contact?mode=contact" className="btn btn-primary">
-              Stuur een bericht
-            </Link>
+            <div style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap" }}>
+              <Link href="/contact?mode=offerte" className="btn btn-primary">
+                Vraag een voorstel aan
+              </Link>
+              <Link href="/contact?mode=contact" className="btn btn-secondary" style={{ borderColor: "oklch(98% 0.004 90)", color: "oklch(98% 0.004 90)" }}>
+                Stuur een bericht
+              </Link>
+            </div>
           </div>
         </section>
       </main>

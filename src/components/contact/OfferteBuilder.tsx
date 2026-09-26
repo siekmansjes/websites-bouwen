@@ -4,6 +4,7 @@ import { useState, type FormEvent } from "react";
 import Link from "next/link";
 import { useWishlist } from "@/lib/wishlist/WishlistContext";
 import { packages } from "@/lib/packages";
+import { addons } from "@/lib/addons";
 import { inputStyle, labelStyle } from "./formStyles";
 import { submitToHubspot } from "@/lib/integrations/hubspot";
 import { LEAD_SOURCE_PREFIX } from "@/lib/site";
@@ -20,19 +21,29 @@ export function OfferteBuilder({ onBack, initialPackageId }: { onBack: () => voi
   const [privacyAccepted, setPrivacyAccepted] = useState(false);
   const [status, setStatus] = useState<Status>("idle");
 
+  function isIncludedInPackage(itemId: string) {
+    if (!packageId) return false;
+    const addon = addons.find((entry) => entry.id === itemId);
+    return addon?.includedInPackages?.includes(packageId) ?? false;
+  }
+
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setStatus("submitting");
 
     try {
       const packageName = packages.find((pkg) => pkg.id === packageId)?.name ?? packageId;
+      // Alleen items die niet al standaard in het gekozen pakket zitten
+      // meesturen als "extra" — voorkomt dat iets dat al inbegrepen is
+      // nogmaals als betaalde wens wordt doorgegeven.
+      const extraItems = items.filter((item) => !isIncludedInPackage(item.id));
       await submitToHubspot({
         naam: `${LEAD_SOURCE_PREFIX} ${naam}`,
         bedrijfsnaam,
         email,
         opmerkingen,
         pakket: packageName,
-        extras: items.map((item) => item.name).join(", "),
+        extras: extraItems.map((item) => item.name).join(", "),
       });
       setStatus("success");
     } catch {
@@ -65,7 +76,7 @@ export function OfferteBuilder({ onBack, initialPackageId }: { onBack: () => voi
 
       <h1 style={{ fontSize: 30, marginTop: 18 }}>Offerte samenstellen</h1>
       <p style={{ fontSize: 15.5, lineHeight: 1.6, color: "oklch(52% 0.012 265)", marginTop: 10 }}>
-        Kies een pakket en stuur eventueel uw wensenlijst met automatiseringen mee.
+        Kies een pakket en stuur eventueel je selectie met automatiseringen mee.
       </p>
 
       <form onSubmit={handleSubmit} className="card" style={{ padding: 32, marginTop: 24, display: "flex", flexDirection: "column", gap: 20 }}>
@@ -95,7 +106,7 @@ export function OfferteBuilder({ onBack, initialPackageId }: { onBack: () => voi
         </div>
 
         <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
-          <label style={labelStyle}>Gewenste automatiseringen ({isLoaded ? items.length : 0})</label>
+          <label style={labelStyle}>Mijn selectie ({isLoaded ? items.length : 0})</label>
           {!isLoaded || items.length === 0 ? (
             <p style={{ fontSize: 13.5, color: "oklch(52% 0.012 265)" }}>
               Nog niets toegevoegd —{" "}
@@ -106,30 +117,40 @@ export function OfferteBuilder({ onBack, initialPackageId }: { onBack: () => voi
             </p>
           ) : (
             <ul style={{ margin: 0, padding: 0, listStyle: "none", display: "flex", flexDirection: "column", gap: 8 }}>
-              {items.map((item) => (
-                <li
-                  key={item.id}
-                  style={{
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "space-between",
-                    padding: "8px 14px",
-                    background: "oklch(93% 0.03 148 / 0.4)",
-                    borderRadius: 6,
-                    fontSize: 14,
-                  }}
-                >
-                  <span>{item.name}</span>
-                  <button
-                    type="button"
-                    onClick={() => removeItem(item.id)}
-                    aria-label={`${item.name} verwijderen`}
-                    style={{ background: "none", border: "none", cursor: "pointer", color: "oklch(52% 0.012 265)", fontSize: 16, padding: 0 }}
+              {items.map((item) => {
+                const included = isIncludedInPackage(item.id);
+                return (
+                  <li
+                    key={item.id}
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "space-between",
+                      padding: "8px 14px",
+                      background: included ? "oklch(96% 0.006 90)" : "oklch(93% 0.03 148 / 0.4)",
+                      borderRadius: 6,
+                      fontSize: 14,
+                    }}
                   >
-                    ×
-                  </button>
-                </li>
-              ))}
+                    <span>
+                      {item.name}
+                      {included && (
+                        <span style={{ marginLeft: 8, fontSize: 12, color: "oklch(52% 0.012 265)" }}>
+                          (zit al in dit pakket)
+                        </span>
+                      )}
+                    </span>
+                    <button
+                      type="button"
+                      onClick={() => removeItem(item.id)}
+                      aria-label={`${item.name} verwijderen`}
+                      style={{ background: "none", border: "none", cursor: "pointer", color: "oklch(52% 0.012 265)", fontSize: 16, padding: 0 }}
+                    >
+                      ×
+                    </button>
+                  </li>
+                );
+              })}
             </ul>
           )}
         </div>
@@ -142,7 +163,7 @@ export function OfferteBuilder({ onBack, initialPackageId }: { onBack: () => voi
         </div>
         <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
           <label htmlFor="bedrijfsnaam" style={labelStyle}>
-            Praktijknaam
+            Bedrijfsnaam
           </label>
           <input id="bedrijfsnaam" name="bedrijfsnaam" type="text" value={bedrijfsnaam} onChange={(e) => setBedrijfsnaam(e.target.value)} style={inputStyle} />
         </div>
