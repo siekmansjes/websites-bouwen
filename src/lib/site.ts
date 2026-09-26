@@ -40,6 +40,8 @@ export const KVK_NUMBER = "[KVK-NUMMER]";
 export const BTW_NUMBER = "[BTW-NUMMER]";
 
 // Gebruikt om leads herkenbaar te maken in een gedeeld HubSpot-formulier
-// (samen met Parkmade/merchmark) — voor de naam geplakt, zodat het altijd
-// zichtbaar is ongeacht welke velden het gedeelde formulier verder heeft.
+// (samen met Parkmade) — voor de naam geplakt, zodat het altijd zichtbaar
+// is ongeacht welke velden het gedeelde formulier verder heeft. Wordt
+// vermoedelijk overbodig zodra er een eigen formulier voor deze site komt
+// (zie README, "HubSpot-koppeling").
 export const LEAD_SOURCE_PREFIX = "[Websites Bouwen]";

@@ -34,13 +34,17 @@ Privacybeleid (`src/app/privacy/page.tsx`):
 - `[DATUM]` (laatst bijgewerkt) nog in te vullen.
 
 HubSpot-koppeling (`src/lib/integrations/hubspot.ts`):
-- **Keuze gemaakt**: het bestaande gedeelde Parkmade/merchmark-formulier
-  hergebruiken, geen apart formulier. Dat formulier heeft alleen naam/e-mail
-  (evt. bestand) als velden — bericht/bedrijfsnaam/pakket/extra's komen dus
-  niet mee tenzij dat formulier later wordt uitgebreid.
-- Om leads herkenbaar te houden tussen de bedrijven: de naam wordt geprefixt
-  met `LEAD_SOURCE_PREFIX` (`src/lib/site.ts`, nu `"[Websites Bouwen]"`) vóór
-  het versturen.
+- **Heroverwogen**: eerder was het plan om het bestaande gedeelde
+  Parkmade/merchmark-formulier te hergebruiken. Merchmark is inmiddels
+  gestopt, en het gedeelde formulier had toch al alleen naam/e-mail als
+  velden — bericht/bedrijfsnaam/pakket/extra's kwamen dus niet mee. Volgende
+  stap: een eigen formulier (en eventueel chatflow) voor websites-bouwen
+  aanmaken binnen dezelfde HubSpot-portal als Parkmade, met de juiste
+  velden. Zodra dat form-ID er is, `NEXT_PUBLIC_HUBSPOT_FORM_ID` bijwerken.
+- Om leads herkenbaar te houden tussen de bedrijven (zolang er nog een
+  gedeeld formulier is): de naam wordt geprefixt met `LEAD_SOURCE_PREFIX`
+  (`src/lib/site.ts`, nu `"[Websites Bouwen]"`) vóór het versturen. Wordt
+  overbodig zodra er een eigen formulier is.
 - Contact-, offerte- en intakeformulier roepen `submitToHubspot()` al
   daadwerkelijk aan — wacht nog op `NEXT_PUBLIC_HUBSPOT_PORTAL_ID` en
   `NEXT_PUBLIC_HUBSPOT_FORM_ID` in `.env.local` (zie `.env.example`), zelfde
