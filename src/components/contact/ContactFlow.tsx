@@ -39,7 +39,7 @@ export function ContactFlow({ initialMode, initialPackageId }: { initialMode?: s
         <span className="eyebrow">Contact</span>
         <h1 style={{ fontSize: 36, marginTop: 10 }}>Hoe wilt u contact opnemen?</h1>
         <p style={{ fontSize: 16, lineHeight: 1.6, color: "oklch(52% 0.012 265)", marginTop: 10 }}>
-          Kies wat het beste past — alle opties komen bij mij terecht.
+          Kies wat het beste past. Alle opties komen bij mij terecht.
         </p>
       </div>
       <ModeChoice onSelect={goToMode} />

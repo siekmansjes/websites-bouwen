@@ -72,7 +72,7 @@ export default function Home() {
         <Hero
           eyebrow="Websites voor MKB'ers"
           title="Een professionele website voor je bedrijf, met een pakket dat past"
-          description="Ik bouw websites voor MKB-bedrijven: drie duidelijke pakketten, eerlijke prijzen en optionele automatisering die je tijd scheelt — zodat jij je kan focussen op je bedrijf in plaats van op administratie."
+          description="Ik bouw websites voor MKB-bedrijven: drie duidelijke pakketten, eerlijke prijzen en optionele automatisering die je tijd scheelt, zodat jij je kan focussen op je bedrijf in plaats van op administratie."
           primaryCta={{ label: "Vraag een voorstel aan", href: "/contact?mode=offerte" }}
           secondaryCta={{ label: "Bekijk pakketten", href: "#pakketten" }}
         />
@@ -82,11 +82,7 @@ export default function Home() {
             <div className="wrap">
               <div style={{ textAlign: "center", maxWidth: 620, margin: "0 auto 36px" }}>
                 <span className="eyebrow">Cases</span>
-                <h2 style={{ fontSize: 32, marginTop: 10 }}>Praktijkprojecten</h2>
-                <p style={{ fontSize: 14.5, color: "oklch(52% 0.012 265)", marginTop: 12 }}>
-                  Parkmade is mijn eigen bedrijf — de eerste echte praktijkcase van een website die ik heb
-                  gebouwd, geen externe klant. Er volgen nog twee praktijkcases.
-                </p>
+                <h2 style={{ fontSize: 32, marginTop: 10 }}>Zo ziet dat er in de praktijk uit</h2>
               </div>
               <div className="grid-3">
                 <CaseStudyCard caseStudy={parkmadeCase} />

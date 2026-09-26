@@ -39,26 +39,18 @@ export default async function CaseDetailPage({ params }: { params: Promise<{ slu
             <Link href="/#cases" className="nav-link" style={{ fontSize: 13.5 }}>
               ← Alle cases
             </Link>
-            {(caseStudy.ownProject || caseStudy.isExample) && (
+            {caseStudy.isExample && (
               <div style={{ marginTop: 20, marginBottom: 12 }}>
-                {caseStudy.ownProject && <ExampleBadge label="Eigen project" tone="own" />}
-                {caseStudy.isExample && <ExampleBadge label="Voorbeeldcase" />}
+                <ExampleBadge label="Voorbeeldcase" />
               </div>
             )}
             <h1 style={{ fontSize: 38 }}>{caseStudy.clientName}</h1>
             <p style={{ fontSize: 14, color: "oklch(52% 0.012 265)", marginTop: 8 }}>{caseStudy.sector}</p>
-            {caseStudy.ownProject && (
-              <p style={{ fontSize: 14, lineHeight: 1.6, color: "oklch(52% 0.012 265)", marginTop: 10, maxWidth: 560 }}>
-                Parkmade is mijn eigen bedrijf — deze website heb ik voor mezelf gebouwd, niet voor een externe
-                klant. Deze case laat zien wat ik daarbij heb opgezet.
-                {caseStudy.liveUrl && (
-                  <>
-                    {" "}
-                    <a href={caseStudy.liveUrl} target="_blank" rel="noopener noreferrer" style={{ fontWeight: 600 }}>
-                      Bekijk de live website ↗
-                    </a>
-                  </>
-                )}
+            {caseStudy.liveUrl && (
+              <p style={{ fontSize: 14, marginTop: 10 }}>
+                <a href={caseStudy.liveUrl} target="_blank" rel="noopener noreferrer" style={{ fontWeight: 600 }}>
+                  Bekijk de live website ↗
+                </a>
               </p>
             )}
 
@@ -96,7 +88,7 @@ export default async function CaseDetailPage({ params }: { params: Promise<{ slu
                     border: "1px solid oklch(90% 0.006 90)",
                   }}
                 >
-                  <Image src={caseStudy.mobileImage} alt={`${caseStudy.clientName} — mobiele weergave`} fill style={{ objectFit: "cover", objectPosition: "top" }} />
+                  <Image src={caseStudy.mobileImage} alt={`${caseStudy.clientName}, mobiele weergave`} fill style={{ objectFit: "cover", objectPosition: "top" }} />
                 </div>
               </div>
             )}

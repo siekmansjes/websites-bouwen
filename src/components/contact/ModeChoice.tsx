@@ -2,7 +2,7 @@ const options = [
   {
     mode: "contact" as const,
     title: "Stuur een bericht",
-    text: "Korte vraag of eerste kennismaking — ik denk mee en kom terug met een voorstel.",
+    text: "Korte vraag of eerste kennismaking. Ik denk mee en kom terug met een voorstel.",
     icon: <path d="M4 5h16a1 1 0 0 1 1 1v11a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zM3.5 6.5l8.5 6 8.5-6" />,
   },
   {

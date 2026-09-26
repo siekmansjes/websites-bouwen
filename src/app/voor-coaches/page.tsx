@@ -12,7 +12,7 @@ import { addons } from "@/lib/addons";
 import { SITE_NAME } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: `${SITE_NAME} — websites voor coaches`,
+  title: `${SITE_NAME}, websites voor coaches`,
   description:
     "Websites voor loopbaan- en persoonlijke coaches die bezoekers helpen de stap naar een eerste gesprek te zetten, met automatisering waar het scheelt.",
   alternates: { canonical: "/voor-coaches" },
@@ -28,7 +28,7 @@ export default function VoorCoachesPage() {
         <Hero
           eyebrow="Websites voor coaches"
           title="Een website die mensen helpt de stap naar jou te zetten"
-          description="Voor loopbaan- en persoonlijke coaches: een heldere website met een duidelijk proces, eerlijke pakketten en automatisering die je scheelt in administratie — zodat jij weer tijd hebt om te coachen."
+          description="Voor loopbaan- en persoonlijke coaches: een heldere website met een duidelijk proces, eerlijke pakketten en automatisering die je scheelt in administratie, zodat jij weer tijd hebt om te coachen."
         />
 
         <section id="cases" style={{ padding: "24px 0 72px" }}>
@@ -103,7 +103,7 @@ export default function VoorCoachesPage() {
           <div className="wrap">
             <h2 style={{ fontSize: 32, marginBottom: 16 }}>Klaar voor een website die voor je werkt?</h2>
             <p style={{ fontSize: 15, color: "oklch(93% 0.03 148)", marginBottom: 28, maxWidth: 480, marginLeft: "auto", marginRight: "auto" }}>
-              Stuur een bericht — dan bekijken we samen wat bij jouw praktijk past.
+              Stuur een bericht, dan bekijken we samen wat bij jouw praktijk past.
             </p>
             <Link href="/contact?mode=contact" className="btn btn-primary">
               Stuur een bericht

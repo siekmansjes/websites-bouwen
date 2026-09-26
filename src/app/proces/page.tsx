@@ -20,7 +20,7 @@ export default function ProcesPage() {
             <span className="eyebrow">Proces</span>
             <h1 style={{ fontSize: 40, marginTop: 10 }}>Zo verloopt een traject</h1>
             <p style={{ fontSize: 15, lineHeight: 1.6, color: "oklch(52% 0.012 265)", marginTop: 14, maxWidth: 560 }}>
-              Van eerste gesprek tot een live website — helder en zonder verrassingen.
+              Van eerste gesprek tot een live website, helder en zonder verrassingen.
             </p>
           </div>
         </section>

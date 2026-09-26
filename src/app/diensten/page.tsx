@@ -24,7 +24,7 @@ export default function DienstenPage() {
             <h1 style={{ fontSize: 40, marginTop: 10 }}>Pakketten & automatiseringen</h1>
             <p style={{ fontSize: 15, lineHeight: 1.6, color: "oklch(52% 0.012 265)", marginTop: 14, maxWidth: 620 }}>
               Kies een basispakket, en vul dat naar wens aan met losse automatiseringsopties. De prijzen
-              hieronder zijn indicatief — de definitieve prijs bepalen we samen tijdens de kennismaking.
+              hieronder zijn indicatief. De definitieve prijs bepalen we samen tijdens de kennismaking.
             </p>
           </div>
         </section>
@@ -85,7 +85,7 @@ export default function DienstenPage() {
             >
               <p style={{ fontSize: 14, lineHeight: 1.6, color: "oklch(21% 0.015 265)" }}>
                 <strong>Je website blijft van jou.</strong> Stop je ooit met hosting & onderhoud bij mij, dan
-                blijft de site (en de broncode) gewoon jouw eigendom — geen abonnement dat je moet aanhouden
+                blijft de site (en de broncode) gewoon jouw eigendom. Geen abonnement dat je moet aanhouden
                 om je eigen website te kunnen gebruiken.
               </p>
             </div>
@@ -98,9 +98,9 @@ export default function DienstenPage() {
               <span className="eyebrow">Losse opties</span>
               <h2 style={{ fontSize: 30, marginTop: 10 }}>Automatiseringen</h2>
               <p style={{ fontSize: 14.5, lineHeight: 1.6, color: "oklch(52% 0.012 265)", marginTop: 10 }}>
-                Voeg toe wat voor jouw bedrijf zinvol is — via de knop &ldquo;Mijn selectie&rdquo; stel je je
+                Voeg toe wat voor jouw bedrijf zinvol is. Via de knop &ldquo;Mijn selectie&rdquo; stel je je
                 website samen en stuur je die direct mee bij je offerteaanvraag. Let op: een deel van deze
-                opties zit al inbegrepen bij Groei of Compleet — dat zie je terug zodra je een pakket kiest.
+                opties zit al inbegrepen bij Groei of Compleet, dat zie je terug zodra je een pakket kiest.
               </p>
             </div>
             <div className="grid-3">

@@ -39,7 +39,7 @@ export function PreviewRequestForm() {
         <h2 style={{ fontSize: 22 }}>Aanvraag ontvangen</h2>
         <p style={{ fontSize: 15, lineHeight: 1.6, color: "oklch(52% 0.012 265)", marginTop: 10 }}>
           Bedankt {naam || ""}, ik ga aan de slag. Binnen 48 uur staat er een echte, werkende
-          voorbeeldwebsite in je mailbox — gratis en vrijblijvend.
+          voorbeeldwebsite in je mailbox, gratis en vrijblijvend.
         </p>
       </div>
     );
@@ -80,7 +80,7 @@ export function PreviewRequestForm() {
           id="preview-omschrijving"
           rows={4}
           required
-          placeholder="Een paar zinnen is genoeg — wat je doet, en voor wie."
+          placeholder="Een paar zinnen is genoeg, wat je doet en voor wie."
           value={omschrijving}
           onChange={(e) => setOmschrijving(e.target.value)}
           style={{ ...inputStyle, height: "auto", padding: "10px 12px", resize: "vertical" }}

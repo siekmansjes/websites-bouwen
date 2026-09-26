@@ -15,7 +15,7 @@ export type FaqItem = {
  */
 export const faqItems: FaqItem[] = [
   {
-    question: "Wat zijn de kosten — eenmalig en terugkerend?",
+    question: "Wat zijn de kosten, eenmalig en terugkerend?",
     answer:
       "Je betaalt één keer voor de bouw van de website (afhankelijk van het pakket), en daarnaast €19 per maand voor hosting, beveiligingsupdates, back-ups en kleine inhoudswijzigingen op aanvraag. Losse automatiseringen zijn eenmalig geprijsd.",
   },
@@ -27,12 +27,12 @@ export const faqItems: FaqItem[] = [
   {
     question: "Wat gebeurt er met eigendom, en als ik met onderhoud stop?",
     answer:
-      "De website en de broncode zijn en blijven jouw eigendom. Stop je ooit met hosting & onderhoud bij mij, dan blijft de site gewoon jouw eigendom — er is geen abonnement dat je moet aanhouden om je eigen website te kunnen gebruiken.",
+      "De website en de broncode zijn en blijven jouw eigendom. Stop je ooit met hosting & onderhoud bij mij, dan blijft de site gewoon jouw eigendom. Er is geen abonnement dat je moet aanhouden om je eigen website te kunnen gebruiken.",
   },
   {
     question: "Word ik beter vindbaar in Google?",
     answer:
-      "Elk pakket bevat SEO-basis (Starter) of uitgebreide SEO (Groei/Compleet): technisch correct, snel en goed gestructureerd. Dat is de basis om vindbaar te kunnen zijn — ik geef geen garanties over een positie in Google of een vermelding in AI-antwoorden, dat hangt van veel meer factoren af.",
+      "Elk pakket bevat SEO-basis (Starter) of uitgebreide SEO (Groei/Compleet): technisch correct, snel en goed gestructureerd. Dat is de basis om vindbaar te kunnen zijn. Ik geef geen garanties over een positie in Google of een vermelding in AI-antwoorden, dat hangt van veel meer factoren af.",
   },
   {
     question: "Kan ik later uitbreiden?",

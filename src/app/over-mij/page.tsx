@@ -18,7 +18,7 @@ export default function OverMijPage() {
         <section style={{ padding: "56px 0 64px" }}>
           <div className="wrap" style={{ maxWidth: 680 }}>
             <span className="eyebrow">Over mij</span>
-            <h1 style={{ fontSize: 40, marginTop: 10 }}>Mark — websites voor MKB&apos;ers</h1>
+            <h1 style={{ fontSize: 40, marginTop: 10 }}>Mark, websites voor MKB&apos;ers</h1>
             <div style={{ display: "flex", flexDirection: "column", gap: 20, marginTop: 24 }}>
               <p style={{ fontSize: 15.5, lineHeight: 1.7, color: "oklch(21% 0.015 265)" }}>
                 Voordat ik websites voor anderen bouwde, bouwde ik er één voor mezelf: met Parkmade lever ik
@@ -35,7 +35,7 @@ export default function OverMijPage() {
               <p style={{ fontSize: 15.5, lineHeight: 1.7, color: "oklch(21% 0.015 265)" }}>
                 Ik werk bewust met een beperkt aantal klanten tegelijk, zodat er echt tijd is voor
                 persoonlijke aandacht. Geen ontwerp uit een sjabloon, maar een site die past bij hoe jij werkt
-                en wat jouw klanten nodig hebben — of je nu coach bent, een praktijk runt of een ander
+                en wat jouw klanten nodig hebben, of je nu coach bent, een praktijk runt of een ander
                 MKB-bedrijf hebt.
               </p>
             </div>

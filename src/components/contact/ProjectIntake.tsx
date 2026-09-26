@@ -107,7 +107,7 @@ export function ProjectIntake({ onBack }: { onBack: () => void }) {
 
       <h1 style={{ fontSize: 30, marginTop: 18 }}>Projectintake</h1>
       <p style={{ fontSize: 15.5, lineHeight: 1.6, color: "oklch(52% 0.012 265)", marginTop: 10 }}>
-        Hoe meer u hier invult, hoe gerichter mijn eerste voorstel — alles is later nog aan te passen.
+        Hoe meer u hier invult, hoe gerichter mijn eerste voorstel. Alles is later nog aan te passen.
       </p>
 
       <form onSubmit={handleSubmit} className="card" style={{ padding: 32, marginTop: 24, display: "flex", flexDirection: "column", gap: 24 }}>
@@ -132,7 +132,7 @@ export function ProjectIntake({ onBack }: { onBack: () => void }) {
             <label key={option.id} style={radioRowStyle}>
               <input type="radio" name="navigatie" value={option.id} checked={navigatie === option.id} onChange={() => setNavigatie(option.id)} style={{ marginTop: 3, accentColor: "oklch(42% 0.08 148)" }} />
               <span>
-                {option.label} <span style={{ color: "oklch(52% 0.012 265)" }}>— {option.hint}</span>
+                {option.label} <span style={{ color: "oklch(52% 0.012 265)" }}>, {option.hint}</span>
               </span>
             </label>
           ))}

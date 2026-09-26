@@ -60,7 +60,7 @@ export default function PrivacyPage() {
           <h2 style={sectionHeadingStyle}>5. Delen met derden</h2>
           <p style={paragraphStyle}>
             Uw gegevens worden niet verkocht aan derden. Om aanvragen te verwerken gebruik ik HubSpot als
-            CRM — uw gegevens uit het contact-, offerte- of aanvraagformulier komen daar binnen zodat ik
+            CRM. Uw gegevens uit het contact-, offerte- of aanvraagformulier komen daar binnen zodat ik
             erop kan reageren.
           </p>
 

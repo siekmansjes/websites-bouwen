@@ -45,7 +45,7 @@ export const caseStudies: CaseStudy[] = [
     isExample: false,
     liveUrl: "https://vakantiepark-website.vercel.app/",
     problem:
-      "Voor Parkmade — mijn eigen bedrijf in bedrukte merchandise voor vakantieparken — moest elke aanvraag los per e-mail of telefoon worden besproken: geen manier voor een klant om zelf een assortiment samen te stellen of een aanvraag compleet aan te leveren.",
+      "Voor Parkmade, mijn eigen bedrijf in bedrukte merchandise voor vakantieparken, moest elke aanvraag los per e-mail of telefoon worden besproken: geen manier voor een klant om zelf een assortiment samen te stellen of een aanvraag compleet aan te leveren.",
     solution:
       "Ik heb voor mijn eigen bedrijf een website gebouwd met een productoverzicht en een wensenlijst waarmee een klant zelf producten selecteert en bewaart, en een offerteformulier dat die selectie automatisch voorstelt.",
     capabilities: [
@@ -55,19 +55,19 @@ export const caseStudies: CaseStudy[] = [
       "Optioneel bestandsveld om een logo of huisstijl aan te leveren bij een aanvraag",
     ],
     result:
-      "Een bezoeker kan zelf een assortiment samenstellen en bewaren, en die selectie in één keer meesturen bij een aanvraag — in plaats van dat alles los per e-mail besproken moet worden.",
+      "Een bezoeker kan zelf een assortiment samenstellen en bewaren, en die selectie in één keer meesturen bij een aanvraag, in plaats van dat alles los per e-mail besproken moet worden.",
     image: "/cases/parkmade-website-desktop.png",
     mobileImage: "/cases/parkmade-website-mobile.png",
   },
   {
     slug: "fysiotherapiepraktijk-automatische-intake",
     audience: "mkb-algemeen",
-    clientName: "[Voorbeeldklant] — Fysiotherapiepraktijk",
+    clientName: "[Voorbeeldklant], Fysiotherapiepraktijk",
     sector: "Fysiotherapie",
     problem:
       "Nieuwe patiënten belden vaak buiten praktijkuren of stuurden een mail die pas de volgende dag werd gelezen, waardoor de eerste afspraak soms dagen op zich liet wachten.",
     solution:
-      "Een website met een intakeformulier en agenda-koppeling, zodat een patiënt direct een moment kan inplannen dat past — zonder telefoontje of wachten op een reactie.",
+      "Een website met een intakeformulier en agenda-koppeling, zodat een patiënt direct een moment kan inplannen dat past, zonder telefoontje of wachten op een reactie.",
     result:
       "Sneller een eerste afspraak voor de patiënt, en minder tijd kwijt aan de telefoon voor de praktijk.",
     isExample: true,
@@ -75,10 +75,10 @@ export const caseStudies: CaseStudy[] = [
   {
     slug: "klussenbedrijf-meer-aanvragen",
     audience: "mkb-algemeen",
-    clientName: "[Voorbeeldklant] — Klussenbedrijf",
+    clientName: "[Voorbeeldklant], Klussenbedrijf",
     sector: "Verbouw & renovatie",
     problem:
-      "De oude website liet wel zien wát het bedrijf deed, maar gaf bezoekers geen duidelijke volgende stap — aanvragen kwamen sporadisch en vaak onvolledig binnen.",
+      "De oude website liet wel zien wát het bedrijf deed, maar gaf bezoekers geen duidelijke volgende stap. Aanvragen kwamen sporadisch en vaak onvolledig binnen.",
     solution:
       "Een heldere site met duidelijke diensten, voorbeeldwerk en één centraal offerteformulier dat meteen de juiste vraag stelt, zodat elke aanvraag direct bruikbaar is.",
     result:
@@ -88,10 +88,10 @@ export const caseStudies: CaseStudy[] = [
   {
     slug: "loopbaancoach-website-met-intake",
     audience: "coaches",
-    clientName: "[Voorbeeldklant] — Loopbaancoach",
+    clientName: "[Voorbeeldklant], Loopbaancoach",
     sector: "Loopbaancoaching",
     problem:
-      "Potentiële klanten vonden de oude website via Google, maar wisten na het lezen niet goed hoe een traject eruitzag of wat het zou kosten — veel bezoekers haakten af zonder contact op te nemen.",
+      "Potentiële klanten vonden de oude website via Google, maar wisten na het lezen niet goed hoe een traject eruitzag of wat het zou kosten. Veel bezoekers haakten af zonder contact op te nemen.",
     solution:
       "Een nieuwe site met een helder stappenplan, drie duidelijke pakketten en een intakeformulier dat automatisch de eerste kennismaking inplant, zodat een bezoeker binnen twee minuten een afspraak in de agenda heeft staan.",
     result:
@@ -101,10 +101,10 @@ export const caseStudies: CaseStudy[] = [
   {
     slug: "persoonlijk-coach-zichtbaarheid",
     audience: "coaches",
-    clientName: "[Voorbeeldklant] — Persoonlijk coach",
+    clientName: "[Voorbeeldklant], Persoonlijk coach",
     sector: "Coaching bij persoonlijke ontwikkeling",
     problem:
-      "Een gedreven coach met sterke mond-tot-mondreclame, maar zonder online aanwezigheid die dat vertrouwen weerspiegelde — de site zag er gedateerd uit en werkte matig op mobiel.",
+      "Een gedreven coach met sterke mond-tot-mondreclame, maar zonder online aanwezigheid die dat vertrouwen weerspiegelde. De site zag er gedateerd uit en werkte matig op mobiel.",
     solution:
       "Een moderne, rustige website die de werkwijze en persoonlijkheid van de coach centraal zet, met echte klantverhalen en een duidelijke eerste stap richting een kennismakingsgesprek.",
     result:
@@ -114,7 +114,7 @@ export const caseStudies: CaseStudy[] = [
   {
     slug: "coachpraktijk-met-automatisering",
     audience: "coaches",
-    clientName: "[Voorbeeldklant] — Coachpraktijk (2 coaches)",
+    clientName: "[Voorbeeldklant], Coachpraktijk (2 coaches)",
     sector: "Loopbaan- en teamcoaching",
     problem:
       "Twee coaches deelden één agenda en verwerkten aanvragen nog volledig handmatig via e-mail, wat tijd kostte en soms tot dubbele boekingen leidde.",

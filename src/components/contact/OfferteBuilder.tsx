@@ -99,7 +99,7 @@ export function OfferteBuilder({ onBack, initialPackageId }: { onBack: () => voi
               >
                 <input type="radio" name="pakket" value={pkg.id} checked={packageId === pkg.id} onChange={() => setPackageId(pkg.id)} style={{ accentColor: "oklch(42% 0.08 148)" }} />
                 <span style={{ fontWeight: 600 }}>{pkg.name}</span>
-                <span style={{ color: "oklch(52% 0.012 265)" }}>— {pkg.priceLabel}</span>
+                <span style={{ color: "oklch(52% 0.012 265)" }}>, {pkg.priceLabel}</span>
               </label>
             ))}
           </div>
@@ -109,7 +109,7 @@ export function OfferteBuilder({ onBack, initialPackageId }: { onBack: () => voi
           <label style={labelStyle}>Mijn selectie ({isLoaded ? items.length : 0})</label>
           {!isLoaded || items.length === 0 ? (
             <p style={{ fontSize: 13.5, color: "oklch(52% 0.012 265)" }}>
-              Nog niets toegevoegd —{" "}
+              Nog niets toegevoegd,{" "}
               <Link href="/diensten#automatiseringen" style={{ textDecoration: "underline" }}>
                 bekijk de opties
               </Link>

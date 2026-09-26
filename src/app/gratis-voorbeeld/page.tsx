@@ -5,7 +5,7 @@ import { PreviewRequestForm } from "@/components/contact/PreviewRequestForm";
 
 export const metadata: Metadata = {
   title: "Gratis voorbeeldwebsite",
-  description: "Vertel in een paar zinnen wat je bedrijf doet, en krijg binnen 48 uur een echte, werkende voorbeeldwebsite — gratis en vrijblijvend.",
+  description: "Vertel in een paar zinnen wat je bedrijf doet, en krijg binnen 48 uur een echte, werkende voorbeeldwebsite, gratis en vrijblijvend.",
   alternates: { canonical: "/gratis-voorbeeld" },
 };
 
@@ -21,7 +21,7 @@ export default function GratisVoorbeeldPage() {
               <h1 style={{ fontSize: 38, marginTop: 10 }}>Zie eerst hoe jouw website eruit kan zien</h1>
               <p style={{ fontSize: 15.5, lineHeight: 1.7, color: "oklch(52% 0.012 265)", marginTop: 14 }}>
                 Vertel in een paar zinnen wat je bedrijf doet. Binnen <strong>48 uur</strong> bouw ik een
-                echte, werkende voorbeeldwebsite voor jouw bedrijf — geen mockup, een echte site die je zelf
+                echte, werkende voorbeeldwebsite voor jouw bedrijf. Geen mockup, een echte site die je zelf
                 kan bekijken.
               </p>
               <ul style={{ margin: "24px 0 0", padding: 0, listStyle: "none", display: "flex", flexDirection: "column", gap: 12 }}>

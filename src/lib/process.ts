@@ -15,7 +15,7 @@ export const processSteps: ProcessStep[] = [
     step: 2,
     title: "Ontwerp",
     description:
-      "Ik werk een ontwerp uit dat past bij jouw manier van werken — rustig en professioneel waar dat nodig is, persoonlijk waar dat past. We bepalen samen wat bij je past en wat je mooi vindt, bijvoorbeeld met een moodboard of voorbeelden van websites, en bespreken ook welke functionaliteiten je nodig hebt.",
+      "Ik werk een ontwerp uit dat past bij jouw manier van werken, rustig en professioneel waar dat nodig is, persoonlijk waar dat past. We bepalen samen wat bij je past en wat je mooi vindt, bijvoorbeeld met een moodboard of voorbeelden van websites, en bespreken ook welke functionaliteiten je nodig hebt.",
   },
   {
     step: 3,
@@ -27,7 +27,7 @@ export const processSteps: ProcessStep[] = [
     step: 4,
     title: "Review & aanscherpen",
     description:
-      "Samen lopen we de site door en verwerk ik je feedback, tot alles precies klopt — teksten, werking van formulieren, weergave op telefoon en tablet.",
+      "Samen lopen we de site door en verwerk ik je feedback, tot alles precies klopt: teksten, werking van formulieren, weergave op telefoon en tablet.",
   },
   {
     step: 5,

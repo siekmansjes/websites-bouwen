@@ -16,7 +16,7 @@ const inter = Inter({
   weight: ["400", "500", "600", "700"],
 });
 
-const title = "[BEDRIJFSNAAM] — websites voor MKB'ers";
+const title = "[BEDRIJFSNAAM], websites voor MKB'ers";
 const description =
   "Websites voor MKB'ers die bezoekers helpen de stap naar een eerste gesprek te zetten, met automatisering waar het scheelt.";
 
