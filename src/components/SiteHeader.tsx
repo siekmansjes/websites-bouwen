@@ -1,10 +1,10 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { WishlistIndicator } from "./WishlistIndicator";
 import { MobileNav } from "./MobileNav";
-import { SITE_NAME } from "@/lib/site";
 
 export function SiteHeader() {
   const [scrolled, setScrolled] = useState(false);
@@ -37,16 +37,8 @@ export function SiteHeader() {
           height: 76,
         }}
       >
-        <Link
-          href="/"
-          style={{
-            fontFamily: "var(--font-display), serif",
-            fontWeight: 700,
-            fontSize: 21,
-            color: "oklch(21% 0.015 265)",
-          }}
-        >
-          {SITE_NAME}
+        <Link href="/" style={{ display: "flex", alignItems: "center" }}>
+          <Image src="/logo.png" alt="Markweb" width={900} height={240} style={{ height: 46, width: "auto" }} priority />
         </Link>
         <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
           <nav
