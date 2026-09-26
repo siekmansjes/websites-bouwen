@@ -11,9 +11,59 @@ import { caseStudies } from "@/lib/cases";
 import { packages } from "@/lib/packages";
 import { addons } from "@/lib/addons";
 
+function ComingSoonCaseCard() {
+  return (
+    <div
+      className="card"
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        overflow: "hidden",
+        borderStyle: "dashed",
+      }}
+    >
+      <div
+        style={{
+          aspectRatio: "16 / 10",
+          background: "oklch(96% 0.006 90)",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="oklch(70% 0.006 90)" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
+          <rect x="3" y="4" width="18" height="14" rx="2" />
+          <path d="M3 9h18M8 4v14" />
+        </svg>
+      </div>
+      <div style={{ padding: "20px 22px", display: "flex", flexDirection: "column", gap: 10, flex: 1 }}>
+        <span
+          style={{
+            display: "inline-flex",
+            alignSelf: "flex-start",
+            fontSize: 11.5,
+            fontWeight: 700,
+            letterSpacing: "0.03em",
+            textTransform: "uppercase",
+            padding: "4px 10px",
+            borderRadius: 999,
+            background: "oklch(96% 0.006 90)",
+            color: "oklch(52% 0.012 265)",
+          }}
+        >
+          Volgt binnenkort
+        </span>
+        <h3 style={{ fontSize: 18, color: "oklch(52% 0.012 265)" }}>Nog een praktijkcase</h3>
+        <p style={{ fontSize: 14, lineHeight: 1.6, color: "oklch(52% 0.012 265)" }}>
+          Hier komt binnenkort een volgend project bij.
+        </p>
+      </div>
+    </div>
+  );
+}
+
 export default function Home() {
   const parkmadeCase = caseStudies.find((caseStudy) => caseStudy.ownProject);
-  const otherCases = caseStudies.filter((caseStudy) => !caseStudy.ownProject).slice(0, 2);
 
   return (
     <>
@@ -31,43 +81,18 @@ export default function Home() {
           <section id="cases" style={{ padding: "0 0 72px" }}>
             <div className="wrap">
               <div style={{ textAlign: "center", maxWidth: 620, margin: "0 auto 36px" }}>
-                <span className="eyebrow">Eigen project</span>
-                <h2 style={{ fontSize: 32, marginTop: 10 }}>Dit is wat ik zelf heb gebouwd</h2>
+                <span className="eyebrow">Cases</span>
+                <h2 style={{ fontSize: 32, marginTop: 10 }}>Praktijkprojecten</h2>
                 <p style={{ fontSize: 14.5, color: "oklch(52% 0.012 265)", marginTop: 12 }}>
                   Parkmade is mijn eigen bedrijf — de eerste echte praktijkcase van een website die ik heb
-                  gebouwd, geen externe klant.
+                  gebouwd, geen externe klant. Er volgen nog twee praktijkcases.
                 </p>
               </div>
-              <div className="grid-2" style={{ maxWidth: 900, margin: "0 auto" }}>
+              <div className="grid-3">
                 <CaseStudyCard caseStudy={parkmadeCase} />
-                <div style={{ display: "flex", flexDirection: "column", gap: 14, justifyContent: "center" }}>
-                  {parkmadeCase.capabilities?.slice(0, 3).map((item) => (
-                    <div key={item} style={{ display: "flex", gap: 10, fontSize: 14.5 }}>
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="oklch(42% 0.08 148)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: 3 }}>
-                        <path d="M20 6 9 17l-5-5" />
-                      </svg>
-                      <span>{item}</span>
-                    </div>
-                  ))}
-                  <Link href={`/cases/${parkmadeCase.slug}`} className="btn btn-secondary" style={{ marginTop: 8, alignSelf: "flex-start" }}>
-                    Bekijk de volledige case
-                  </Link>
-                </div>
+                <ComingSoonCaseCard />
+                <ComingSoonCaseCard />
               </div>
-
-              {otherCases.length > 0 && (
-                <div style={{ marginTop: 48 }}>
-                  <p style={{ fontSize: 13, color: "oklch(52% 0.012 265)", textAlign: "center", marginBottom: 20 }}>
-                    De cases hieronder zijn illustratief en laten zien wat er mogelijk is — nog geen echte
-                    klantverhalen.
-                  </p>
-                  <div className="grid-2" style={{ maxWidth: 700, margin: "0 auto" }}>
-                    {otherCases.map((caseStudy) => (
-                      <CaseStudyCard key={caseStudy.slug} caseStudy={caseStudy} />
-                    ))}
-                  </div>
-                </div>
-              )}
             </div>
           </section>
         )}
