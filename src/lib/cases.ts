@@ -7,8 +7,8 @@ export type CaseStudy = {
   result: string;
   /** Alleen zetten als er een echte foto in public/cases/ staat. */
   image?: string;
-  /** Optioneel: schermafbeelding van de mobiele weergave, naast `image` (desktop). */
-  mobileImage?: string;
+  /** Optioneel: extra detailfoto's (bv. van het opgeleverde werk). Leeg tonen we een placeholder als de case geen voorbeeldcontent is. */
+  detailImages?: string[];
   /** Doelgroep-label, gebruikt om cases te filteren op een doelgroep-landingspagina (bv. "coaches"). */
   audience: string;
   /** Markeert deze case als voorbeeldcontent — nog te vervangen door een echte case. */
@@ -57,7 +57,6 @@ export const caseStudies: CaseStudy[] = [
     result:
       "Een bezoeker kan zelf een assortiment samenstellen en bewaren, en die selectie in één keer meesturen bij een aanvraag, in plaats van dat alles los per e-mail besproken moet worden.",
     image: "/cases/parkmade-website-desktop.png",
-    mobileImage: "/cases/parkmade-website-mobile.png",
   },
   {
     slug: "fysiotherapiepraktijk-automatische-intake",

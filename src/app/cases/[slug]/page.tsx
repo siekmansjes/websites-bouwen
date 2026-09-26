@@ -76,19 +76,34 @@ export default async function CaseDetailPage({ params }: { params: Promise<{ slu
                 </svg>
               )}
             </div>
-            {caseStudy.mobileImage && (
-              <div style={{ display: "flex", justifyContent: "center", marginTop: -16, marginBottom: 32 }}>
-                <div
-                  style={{
-                    position: "relative",
-                    width: 220,
-                    aspectRatio: "390 / 844",
-                    borderRadius: 16,
-                    overflow: "hidden",
-                    border: "1px solid oklch(90% 0.006 90)",
-                  }}
-                >
-                  <Image src={caseStudy.mobileImage} alt={`${caseStudy.clientName}, mobiele weergave`} fill style={{ objectFit: "cover", objectPosition: "top" }} />
+            {!caseStudy.isExample && (
+              <div style={{ marginTop: -16, marginBottom: 32 }}>
+                <div className="grid-3" style={{ gap: 16 }}>
+                  {(caseStudy.detailImages?.length ? caseStudy.detailImages : [null, null, null]).map((src, index) =>
+                    src ? (
+                      <div key={src} style={{ position: "relative", aspectRatio: "4 / 3", borderRadius: 8, overflow: "hidden", border: "1px solid oklch(90% 0.006 90)" }}>
+                        <Image src={src} alt={`${caseStudy.clientName}, detailfoto ${index + 1}`} fill style={{ objectFit: "cover" }} />
+                      </div>
+                    ) : (
+                      <div
+                        key={index}
+                        style={{
+                          aspectRatio: "4 / 3",
+                          borderRadius: 8,
+                          border: "1px dashed oklch(85% 0.006 90)",
+                          background: "oklch(96% 0.006 90)",
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                        }}
+                      >
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="oklch(70% 0.006 90)" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
+                          <rect x="3" y="4" width="18" height="14" rx="2" />
+                          <path d="M3 9h18M8 4v14" />
+                        </svg>
+                      </div>
+                    )
+                  )}
                 </div>
               </div>
             )}
