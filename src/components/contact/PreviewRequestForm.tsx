@@ -3,7 +3,7 @@
 import { useState, type FormEvent } from "react";
 import Link from "next/link";
 import { inputStyle, labelStyle } from "./formStyles";
-import { submitToHubspot } from "@/lib/integrations/hubspot";
+import { submitLead } from "@/lib/leadSubmit";
 
 type Status = "idle" | "submitting" | "success" | "error";
 
@@ -20,12 +20,7 @@ export function PreviewRequestForm() {
     setStatus("submitting");
 
     try {
-      await submitToHubspot({
-        firstname: `[Gratis voorbeeld] ${naam}`,
-        email,
-        company: bedrijfsnaam,
-        message: omschrijving,
-      });
+      await submitLead("/api/gratis-voorbeeld", { naam, email, bedrijfsnaam, omschrijving });
       setStatus("success");
     } catch {
       setStatus("error");

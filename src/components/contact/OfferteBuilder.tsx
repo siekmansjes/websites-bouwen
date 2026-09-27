@@ -6,7 +6,7 @@ import { useWishlist } from "@/lib/wishlist/WishlistContext";
 import { packages } from "@/lib/packages";
 import { addons } from "@/lib/addons";
 import { inputStyle, labelStyle } from "./formStyles";
-import { submitToHubspot } from "@/lib/integrations/hubspot";
+import { submitLead } from "@/lib/leadSubmit";
 
 type Status = "idle" | "submitting" | "success" | "error";
 
@@ -36,13 +36,13 @@ export function OfferteBuilder({ onBack, initialPackageId }: { onBack: () => voi
       // meesturen als "extra" — voorkomt dat iets dat al inbegrepen is
       // nogmaals als betaalde wens wordt doorgegeven.
       const extraItems = items.filter((item) => !isIncludedInPackage(item.id));
-      await submitToHubspot({
-        firstname: `[Offerte] ${naam}`,
-        company: bedrijfsnaam,
+      await submitLead("/api/offerte", {
+        naam,
+        bedrijfsnaam,
         email,
-        message: opmerkingen,
+        opmerkingen,
         pakket: packageName,
-        extra_opties: extraItems.map((item) => item.name).join(", "),
+        extras: extraItems.map((item) => item.name),
       });
       setStatus("success");
     } catch {
