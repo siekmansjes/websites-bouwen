@@ -46,15 +46,28 @@ HubSpot-koppeling (`src/lib/integrations/hubspot.ts`):
   `[Gratis voorbeeld]`, `[Projectintake]`) zodat leads in HubSpot meteen
   herkenbaar zijn per formulier — dit is nu puur informatief, niet meer
   nodig om bedrijven uit elkaar te houden zoals bij het gedeelde formulier.
-- Nog niet gecontroleerd: of het formulier in HubSpot zelf daadwerkelijk
-  alle velden bevat die de code verstuurt (`naam`, `email`, `bericht`,
-  `bedrijfsnaam`, `opmerkingen`, `pakket`, `extras`) — Mark heeft het
-  formulier aangemaakt met die interne veldnamen, maar dit is niet
-  operationeel getest met een echte inzending.
+- **Echte interne veldnamen gecontroleerd via de HubSpot-property-schema**
+  (niet via een live testinzending — dat werd door de omgeving geblokkeerd
+  na één geslaagde diagnostische aanroep). Op dit portal zijn "Naam" en
+  "Bedrijfsnaam" gekoppeld aan HubSpot's eigen standaardvelden, niet aan
+  losse velden met de namen die eerder waren aangeraden:
+  - `naam` → verstuurd als `firstname` (standaardveld "First Name")
+  - `bedrijfsnaam` → verstuurd als `company` (standaardveld "Company Name")
+  - `bericht`/`opmerkingen` → verstuurd als `message` (standaardveld "Message")
+  - `pakket` → klopte al, bestaat als eigen property `pakket`
+  - `extras` → verstuurd als `extra_opties` (eigen property, niet `extras`)
+  - Code in `ContactForm.tsx`, `OfferteBuilder.tsx`, `PreviewRequestForm.tsx`
+    is hierop aangepast. **Nog niet 100% zeker**: dit is bevestigd doordat
+    deze properties op het contact-object bestaan, niet door een echte
+    formulierinzending die alle velden tegelijk test — dat laatste nog
+    even door Mark zelf te doen.
 - Projectintake (`/contact?mode=intake`) staat bewust niet in het publieke
-  contact-keuzemenu — die stuurt Mark zelf pas na een toezegging. Stuurt
-  wel extra velden (praktijknaam, branche, etc.) die niet in de hierboven
-  genoemde formulierveldenlijst zaten — nog te checken of die aankomen.
+  contact-keuzemenu — die stuurt Mark zelf pas na een toezegging. De extra
+  velden die dat formulier verstuurt (praktijknaam, branche, doelgroep,
+  navigatie, theme, prijzenTonen, koppelingen, eigenFotos, domeinnaam,
+  teksten, overig) bestaan **niet** als property op dit portal — komen dus
+  niet aan in HubSpot. Nog te bepalen: die velden alsnog aanmaken in
+  HubSpot, of de intake-flow herzien.
 - **Nog te doen**: chatflow aanmaken in HubSpot (Conversaties → Chatflows),
   embedcode aanleveren zodat die net als bij Parkmade (`HubSpotChat.tsx`)
   ingebouwd kan worden.

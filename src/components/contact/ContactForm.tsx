@@ -19,7 +19,7 @@ export function ContactForm({ onBack }: { onBack: () => void }) {
     setStatus("submitting");
 
     try {
-      await submitToHubspot({ naam, email, bericht });
+      await submitToHubspot({ firstname: naam, email, message: bericht });
       setStatus("success");
     } catch {
       setStatus("error");

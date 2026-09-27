@@ -21,10 +21,10 @@ export function PreviewRequestForm() {
 
     try {
       await submitToHubspot({
-        naam: `[Gratis voorbeeld] ${naam}`,
+        firstname: `[Gratis voorbeeld] ${naam}`,
         email,
-        bedrijfsnaam,
-        opmerkingen: omschrijving,
+        company: bedrijfsnaam,
+        message: omschrijving,
       });
       setStatus("success");
     } catch {

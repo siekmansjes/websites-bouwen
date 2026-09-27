@@ -37,12 +37,12 @@ export function OfferteBuilder({ onBack, initialPackageId }: { onBack: () => voi
       // nogmaals als betaalde wens wordt doorgegeven.
       const extraItems = items.filter((item) => !isIncludedInPackage(item.id));
       await submitToHubspot({
-        naam: `[Offerte] ${naam}`,
-        bedrijfsnaam,
+        firstname: `[Offerte] ${naam}`,
+        company: bedrijfsnaam,
         email,
-        opmerkingen,
+        message: opmerkingen,
         pakket: packageName,
-        extras: extraItems.map((item) => item.name).join(", "),
+        extra_opties: extraItems.map((item) => item.name).join(", "),
       });
       setStatus("success");
     } catch {

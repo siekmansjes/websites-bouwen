@@ -60,7 +60,7 @@ export function ProjectIntake({ onBack }: { onBack: () => void }) {
 
     try {
       await submitToHubspot({
-        naam: `[Projectintake] ${naam}`,
+        firstname: `[Projectintake] ${naam}`,
         email,
         praktijknaam,
         branche,
