@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 type HeroCta = { label: string; href: string };
@@ -39,19 +40,22 @@ export function Hero({
         <div
           className="hero-visual"
           style={{
+            position: "relative",
             flex: 1,
             aspectRatio: "4 / 3",
             borderRadius: 8,
             background: "oklch(93% 0.03 148)",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
+            overflow: "hidden",
           }}
         >
-          <svg width="88" height="88" viewBox="0 0 24 24" fill="none" stroke="oklch(34% 0.075 148)" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round">
-            <circle cx="12" cy="8" r="4" />
-            <path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8" />
-          </svg>
+          <Image
+            src="/hero.webp"
+            alt="Een website die ik gebouwd heb, getoond op een scherm"
+            fill
+            sizes="(max-width: 1000px) 100vw, 520px"
+            style={{ objectFit: "cover" }}
+            priority
+          />
         </div>
       </div>
     </section>
