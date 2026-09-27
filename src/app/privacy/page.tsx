@@ -72,7 +72,9 @@ export default function PrivacyPage() {
 
           <h2 style={sectionHeadingStyle}>7. Cookies</h2>
           <p style={paragraphStyle}>
-            Deze website gebruikt momenteel geen analytische of trackingcookies.
+            Deze website gebruikt geen analytische of trackingcookies, behalve de chatfunctie (HubSpot) — die
+            wordt alleen geladen als u daar expliciet toestemming voor geeft via de cookiemelding. Zonder
+            toestemming werkt de site gewoon, alleen zonder chat.
           </p>
         </div>
       </section>

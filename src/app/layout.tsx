@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Lora, Inter } from "next/font/google";
 import { WishlistProvider } from "@/lib/wishlist/WishlistContext";
+import { HubSpotChat } from "@/components/HubSpotChat";
+import { CookieNotice } from "@/components/CookieNotice";
 import { IS_PRODUCTION, SITE_URL } from "@/lib/site";
 import "./globals.css";
 
@@ -50,6 +52,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html lang="nl" className={`${displayFont.variable} ${inter.variable}`}>
       <body>
         <WishlistProvider>{children}</WishlistProvider>
+        <CookieNotice />
+        <HubSpotChat />
       </body>
     </html>
   );
