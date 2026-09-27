@@ -2,9 +2,10 @@ export type CaseStudy = {
   slug: string;
   clientName: string;
   sector: string;
-  problem: string;
-  solution: string;
-  result: string;
+  /** Optioneel: leeg laten (nog niet zetten) zolang de inhoud nog niet is aangeleverd — toont dan een "volgt nog"-melding i.p.v. verzonnen tekst. */
+  problem?: string;
+  solution?: string;
+  result?: string;
   /** Alleen zetten als er een echte foto in public/cases/ staat. */
   image?: string;
   /** Optioneel: extra detailfoto's (bv. van het opgeleverde werk). Leeg tonen we een placeholder als de case geen voorbeeldcontent is. */
@@ -57,6 +58,17 @@ export const caseStudies: CaseStudy[] = [
     result:
       "Een bezoeker kan zelf een assortiment samenstellen en bewaren, en die selectie in één keer meesturen bij een aanvraag, in plaats van dat alles los per e-mail besproken moet worden.",
     image: "/cases/parkmade-website-desktop.png",
+  },
+  {
+    slug: "leanne-vis-coaching-website",
+    audience: "coaches",
+    clientName: "Leanne Vis",
+    sector: "Coaching",
+    isExample: false,
+    image: "/cases/leannevis-logo.webp",
+    // leannevis.nl toont nu nog een geparkeerde TransIP-pagina, geen
+    // werkende site (gecontroleerd 27-09-2026) — daarom geen liveUrl.
+    // Probleem/oplossing/resultaat volgen zodra aangeleverd.
   },
   {
     slug: "fysiotherapiepraktijk-automatische-intake",

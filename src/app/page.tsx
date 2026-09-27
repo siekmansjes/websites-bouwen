@@ -63,7 +63,8 @@ function ComingSoonCaseCard() {
 }
 
 export default function Home() {
-  const parkmadeCase = caseStudies.find((caseStudy) => caseStudy.ownProject);
+  const realCases = caseStudies.filter((caseStudy) => !caseStudy.isExample).slice(0, 3);
+  const placeholderCount = Math.max(0, 3 - realCases.length);
 
   return (
     <>
@@ -77,7 +78,7 @@ export default function Home() {
           secondaryCta={{ label: "Bekijk pakketten", href: "#pakketten" }}
         />
 
-        {parkmadeCase && (
+        {realCases.length > 0 && (
           <section id="cases" style={{ padding: "0 0 72px" }}>
             <div className="wrap">
               <div style={{ textAlign: "center", maxWidth: 620, margin: "0 auto 36px" }}>
@@ -85,9 +86,12 @@ export default function Home() {
                 <h2 style={{ fontSize: 32, marginTop: 10 }}>Zo ziet dat er in de praktijk uit</h2>
               </div>
               <div className="grid-3">
-                <CaseStudyCard caseStudy={parkmadeCase} />
-                <ComingSoonCaseCard />
-                <ComingSoonCaseCard />
+                {realCases.map((caseStudy) => (
+                  <CaseStudyCard key={caseStudy.slug} caseStudy={caseStudy} />
+                ))}
+                {Array.from({ length: placeholderCount }).map((_, index) => (
+                  <ComingSoonCaseCard key={index} />
+                ))}
               </div>
             </div>
           </section>

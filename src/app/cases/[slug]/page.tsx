@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   if (!caseStudy) return {};
   return {
     title: caseStudy.clientName,
-    description: caseStudy.result,
+    description: caseStudy.result ?? `Case: ${caseStudy.clientName}, ${caseStudy.sector}.`,
     alternates: { canonical: `/cases/${caseStudy.slug}` },
     // Illustratieve cases zijn nog geen echte klantverhalen — die willen we
     // niet laten indexeren totdat ze vervangen zijn door echte cases.
@@ -109,14 +109,18 @@ export default async function CaseDetailPage({ params }: { params: Promise<{ slu
             )}
 
             <div style={{ display: "flex", flexDirection: "column", gap: 28 }}>
-              <div>
-                <h2 style={{ fontSize: 20, marginBottom: 8 }}>Het probleem</h2>
-                <p style={{ fontSize: 15, lineHeight: 1.7, color: "oklch(21% 0.015 265)" }}>{caseStudy.problem}</p>
-              </div>
-              <div>
-                <h2 style={{ fontSize: 20, marginBottom: 8 }}>De oplossing</h2>
-                <p style={{ fontSize: 15, lineHeight: 1.7, color: "oklch(21% 0.015 265)" }}>{caseStudy.solution}</p>
-              </div>
+              {caseStudy.problem && (
+                <div>
+                  <h2 style={{ fontSize: 20, marginBottom: 8 }}>Het probleem</h2>
+                  <p style={{ fontSize: 15, lineHeight: 1.7, color: "oklch(21% 0.015 265)" }}>{caseStudy.problem}</p>
+                </div>
+              )}
+              {caseStudy.solution && (
+                <div>
+                  <h2 style={{ fontSize: 20, marginBottom: 8 }}>De oplossing</h2>
+                  <p style={{ fontSize: 15, lineHeight: 1.7, color: "oklch(21% 0.015 265)" }}>{caseStudy.solution}</p>
+                </div>
+              )}
               {caseStudy.capabilities && (
                 <div>
                   <h2 style={{ fontSize: 20, marginBottom: 8 }}>Concrete functionaliteiten</h2>
@@ -129,10 +133,17 @@ export default async function CaseDetailPage({ params }: { params: Promise<{ slu
                   </ul>
                 </div>
               )}
-              <div>
-                <h2 style={{ fontSize: 20, marginBottom: 8 }}>Het resultaat</h2>
-                <p style={{ fontSize: 15, lineHeight: 1.7, color: "oklch(21% 0.015 265)" }}>{caseStudy.result}</p>
-              </div>
+              {caseStudy.result && (
+                <div>
+                  <h2 style={{ fontSize: 20, marginBottom: 8 }}>Het resultaat</h2>
+                  <p style={{ fontSize: 15, lineHeight: 1.7, color: "oklch(21% 0.015 265)" }}>{caseStudy.result}</p>
+                </div>
+              )}
+              {!caseStudy.problem && !caseStudy.solution && !caseStudy.result && (
+                <p style={{ fontSize: 15, lineHeight: 1.7, color: "oklch(52% 0.012 265)" }}>
+                  De uitgebreide beschrijving van deze case volgt binnenkort.
+                </p>
+              )}
             </div>
 
             <div style={{ marginTop: 44, padding: "28px 26px", background: "oklch(93% 0.03 148 / 0.35)", borderRadius: 8, textAlign: "center" }}>
