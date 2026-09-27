@@ -4,7 +4,6 @@ import { useState, type FormEvent } from "react";
 import Link from "next/link";
 import { inputStyle, labelStyle } from "./formStyles";
 import { submitToHubspot } from "@/lib/integrations/hubspot";
-import { LEAD_SOURCE_PREFIX } from "@/lib/site";
 
 type Status = "idle" | "submitting" | "success" | "error";
 
@@ -22,7 +21,7 @@ export function PreviewRequestForm() {
 
     try {
       await submitToHubspot({
-        naam: `${LEAD_SOURCE_PREFIX} [Gratis voorbeeld] ${naam}`,
+        naam: `[Gratis voorbeeld] ${naam}`,
         email,
         bedrijfsnaam,
         opmerkingen: omschrijving,

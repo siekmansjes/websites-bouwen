@@ -7,7 +7,6 @@ import { packages } from "@/lib/packages";
 import { addons } from "@/lib/addons";
 import { inputStyle, labelStyle } from "./formStyles";
 import { submitToHubspot } from "@/lib/integrations/hubspot";
-import { LEAD_SOURCE_PREFIX } from "@/lib/site";
 
 type Status = "idle" | "submitting" | "success" | "error";
 
@@ -38,7 +37,7 @@ export function OfferteBuilder({ onBack, initialPackageId }: { onBack: () => voi
       // nogmaals als betaalde wens wordt doorgegeven.
       const extraItems = items.filter((item) => !isIncludedInPackage(item.id));
       await submitToHubspot({
-        naam: `${LEAD_SOURCE_PREFIX} ${naam}`,
+        naam: `[Offerte] ${naam}`,
         bedrijfsnaam,
         email,
         opmerkingen,

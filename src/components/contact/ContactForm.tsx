@@ -4,7 +4,6 @@ import { useState, type FormEvent } from "react";
 import Link from "next/link";
 import { inputStyle, labelStyle } from "./formStyles";
 import { submitToHubspot } from "@/lib/integrations/hubspot";
-import { LEAD_SOURCE_PREFIX } from "@/lib/site";
 
 type Status = "idle" | "submitting" | "success" | "error";
 
@@ -20,7 +19,7 @@ export function ContactForm({ onBack }: { onBack: () => void }) {
     setStatus("submitting");
 
     try {
-      await submitToHubspot({ naam: `${LEAD_SOURCE_PREFIX} ${naam}`, email, bericht });
+      await submitToHubspot({ naam, email, bericht });
       setStatus("success");
     } catch {
       setStatus("error");
