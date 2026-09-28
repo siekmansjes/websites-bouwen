@@ -111,13 +111,13 @@ export default async function CaseDetailPage({ params }: { params: Promise<{ slu
             <div style={{ display: "flex", flexDirection: "column", gap: 28 }}>
               {caseStudy.problem && (
                 <div>
-                  <h2 style={{ fontSize: 20, marginBottom: 8 }}>Het probleem</h2>
+                  <h2 style={{ fontSize: 20, marginBottom: 8 }}>{caseStudy.problemHeading ?? "Het probleem"}</h2>
                   <p style={{ fontSize: 15, lineHeight: 1.7, color: "oklch(21% 0.015 265)" }}>{caseStudy.problem}</p>
                 </div>
               )}
               {caseStudy.solution && (
                 <div>
-                  <h2 style={{ fontSize: 20, marginBottom: 8 }}>De oplossing</h2>
+                  <h2 style={{ fontSize: 20, marginBottom: 8 }}>{caseStudy.solutionHeading ?? "De oplossing"}</h2>
                   <p style={{ fontSize: 15, lineHeight: 1.7, color: "oklch(21% 0.015 265)" }}>{caseStudy.solution}</p>
                 </div>
               )}

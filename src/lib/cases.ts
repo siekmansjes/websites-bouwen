@@ -6,6 +6,10 @@ export type CaseStudy = {
   problem?: string;
   solution?: string;
   result?: string;
+  /** Optioneel: overschrijft de standaardkop "Het probleem" (bv. "De wens" als er geen probleem maar een wensenlijst is). */
+  problemHeading?: string;
+  /** Optioneel: overschrijft de standaardkop "De oplossing" (bv. "De uitvoering"). */
+  solutionHeading?: string;
   /** Alleen zetten als er een echte foto in public/cases/ staat. */
   image?: string;
   /** Optioneel: extra detailfoto's (bv. van het opgeleverde werk). Leeg tonen we een placeholder als de case geen voorbeeldcontent is. */
@@ -14,8 +18,6 @@ export type CaseStudy = {
   audience: string;
   /** Markeert deze case als voorbeeldcontent — nog te vervangen door een echte case. */
   isExample: boolean;
-  /** Markeert dat dit een eigen project van de websitebouwer is (geen externe klant). */
-  ownProject?: boolean;
   /** Concrete, zelf geobserveerde functionaliteiten — alleen items die ik op de live site heb gezien, niet alleen in code. */
   capabilities?: string[];
   /** Optioneel: link naar de publiek bereikbare website, alleen zetten als die daadwerkelijk live staat. */
@@ -23,40 +25,41 @@ export type CaseStudy = {
 };
 
 /**
- * Interne verificatienotitie bij Parkmade (26-09-2026, niet publiek tonen):
+ * Interne verificatienotitie bij Parkmade (28-09-2026, niet publiek tonen):
  * live op https://vakantiepark-website.vercel.app/ (parkmade.nl zelf is nog
  * een geparkeerd TransIP-domein, niet de werkende site). Op de live site
- * zelf gezien en dus bevestigd: productoverzicht, wensenlijst/samplebox
- * (bevestigd via de eigen cookiemelding van de site), offerteformulier met
- * naam/bedrijfsnaam/e-mail/telefoon + optioneel logo-upload. NIET bevestigd,
- * alleen in de broncode van de vakantiepark-website-repo aangetroffen (dus
- * niet operationeel getest, daarom hier niet als functionaliteit vermeld):
- * of de formulieren daadwerkelijk in HubSpot binnenkomen. NIET in de code
+ * zelf gezien en dus bevestigd: productoverzicht met per aantal zichtbare
+ * staffelprijzen (/prijzen), wensenlijst/samplebox (ook bevestigd via de
+ * eigen cookiemelding van de site), offerteformulier met naam/bedrijfsnaam/
+ * e-mail/telefoon + optioneel logo-upload. NIET bevestigd, alleen in de
+ * broncode van de vakantiepark-website-repo aangetroffen (dus niet
+ * operationeel getest, daarom hier niet als functionaliteit vermeld): of de
+ * formulieren daadwerkelijk in HubSpot binnenkomen. NIET in de code
  * aangetroffen (dus niet gebouwd): een 2D-ontwerpconfigurator, een
- * agenda-koppeling (Cal.com), een Moneybird-facturatiekoppeling — die
- * stonden eerder wel in de case-tekst, dat was onjuist.
+ * agenda-koppeling (Cal.com), een Moneybird-facturatiekoppeling.
  */
 export const caseStudies: CaseStudy[] = [
   {
-    slug: "parkmade-eigen-website",
+    slug: "parkmade",
     audience: "mkb-algemeen",
     clientName: "Parkmade",
     sector: "Merchandise & promotiematerialen voor vakantieparken",
-    ownProject: true,
     isExample: false,
     liveUrl: "https://vakantiepark-website.vercel.app/",
+    problemHeading: "De wens",
+    solutionHeading: "De uitvoering",
     problem:
-      "Voor Parkmade, mijn eigen bedrijf in bedrukte merchandise voor vakantieparken, moest elke aanvraag los per e-mail of telefoon worden besproken: geen manier voor een klant om zelf een assortiment samen te stellen of een aanvraag compleet aan te leveren.",
+      "Vakantieparken moesten voor merchandise vaak op meerdere plekken zoeken en telkens los contact opnemen om prijzen en mogelijkheden te bespreken. De wens was om dat te vereenvoudigen: alles op één plek kunnen regelen, in plaats van overal apart naar prijzen en opties te moeten vragen. Ook moesten bestellen makkelijker en de prijzen transparanter worden dan bij bestaande aanbieders.",
     solution:
-      "Ik heb voor mijn eigen bedrijf een website gebouwd met een productoverzicht en een wensenlijst waarmee een klant zelf producten selecteert en bewaart, en een offerteformulier dat die selectie automatisch voorstelt.",
+      "Een website met een productoverzicht waarin de prijzen per aantal direct zichtbaar zijn, een wensenlijst om producten te verzamelen, en een offerteformulier dat die volledige selectie in één keer als aanvraag verstuurt. Bij twijfel over de kwaliteit kan een vakantiepark eerst een samplebox bestellen, voordat er een grotere bestelling wordt geplaatst.",
     capabilities: [
-      "Productoverzicht per categorie, met kenmerken en specificaties per artikel",
-      "Wensenlijst/samplebox: producten toevoegen, bewaard per browser, blijft behouden tussen paginabezoeken",
-      "Offerteformulier dat de samengestelde productlijst automatisch voorstelt, met naam, bedrijfsnaam, e-mail en telefoon",
-      "Optioneel bestandsveld om een logo of huisstijl aan te leveren bij een aanvraag",
+      "Productoverzicht per categorie, met staffelprijzen per aantal direct zichtbaar, geen prijs hoeven opvragen",
+      "Wensenlijst: producten verzamelen, bewaard per browser, blijft behouden tussen paginabezoeken",
+      "Samplebox te bestellen bij twijfel over kwaliteit",
+      "Offerteformulier dat de samengestelde productlijst in één keer als aanvraag verstuurt, met naam, bedrijfsnaam, e-mail en telefoon",
     ],
     result:
-      "Een bezoeker kan zelf een assortiment samenstellen en bewaren, en die selectie in één keer meesturen bij een aanvraag, in plaats van dat alles los per e-mail besproken moet worden.",
+      "Een vakantiepark regelt nu alles op één plek: assortiment bekijken, prijzen direct zien, eventueel eerst een samplebox aanvragen, en de hele selectie in één keer als offerteaanvraag versturen in plaats van dat steeds apart te moeten navragen.",
     image: "/cases/parkmade-desktop-v2.png",
   },
   {
