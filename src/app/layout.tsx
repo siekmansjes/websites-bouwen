@@ -3,7 +3,7 @@ import { Lora, Inter } from "next/font/google";
 import { WishlistProvider } from "@/lib/wishlist/WishlistContext";
 import { HubSpotChat } from "@/components/HubSpotChat";
 import { CookieNotice } from "@/components/CookieNotice";
-import { IS_PRODUCTION, SITE_URL } from "@/lib/site";
+import { IS_PRODUCTION, SITE_NAME, SITE_URL } from "@/lib/site";
 import "./globals.css";
 
 const displayFont = Lora({
@@ -18,7 +18,7 @@ const inter = Inter({
   weight: ["400", "500", "600", "700"],
 });
 
-const title = "[BEDRIJFSNAAM], websites voor MKB'ers";
+const title = `${SITE_NAME}, websites voor MKB'ers`;
 const description =
   "Websites voor MKB'ers die bezoekers helpen de stap naar een eerste gesprek te zetten, met automatisering waar het scheelt.";
 
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     title,
     description,
     url: SITE_URL,
-    siteName: "[BEDRIJFSNAAM]",
+    siteName: SITE_NAME,
     locale: "nl_NL",
     type: "website",
     images: [{ url: "/opengraph-image", width: 1200, height: 630 }],

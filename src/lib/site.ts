@@ -35,8 +35,8 @@ const isKnownNonProductionDeployment = vercelEnv === "preview" || vercelEnv === 
 export const IS_PRODUCTION =
   explicitlyEnabledForIndexing && Boolean(PRODUCTION_URL) && !isKnownNonProductionDeployment;
 
-export const SITE_NAME = "[BEDRIJFSNAAM]";
-export const CONTACT_EMAIL = "[E-MAILADRES]";
+export const SITE_NAME = "Markweb";
+export const CONTACT_EMAIL = "info@markweb.nl";
 export const CONTACT_PHONE = "[TELEFOONNUMMER]";
 export const CONTACT_ADDRESS = "[ADRESGEGEVENS]";
 export const KVK_NUMBER = "[KVK-NUMMER]";
