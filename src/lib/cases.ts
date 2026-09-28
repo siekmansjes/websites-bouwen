@@ -31,12 +31,24 @@ export type CaseStudy = {
  * zelf gezien en dus bevestigd: productoverzicht met per aantal zichtbare
  * staffelprijzen (/prijzen), wensenlijst/samplebox (ook bevestigd via de
  * eigen cookiemelding van de site), offerteformulier met naam/bedrijfsnaam/
- * e-mail/telefoon + optioneel logo-upload. NIET bevestigd, alleen in de
- * broncode van de vakantiepark-website-repo aangetroffen (dus niet
- * operationeel getest, daarom hier niet als functionaliteit vermeld): of de
- * formulieren daadwerkelijk in HubSpot binnenkomen. NIET in de code
- * aangetroffen (dus niet gebouwd): een 2D-ontwerpconfigurator, een
- * agenda-koppeling (Cal.com), een Moneybird-facturatiekoppeling.
+ * e-mail/telefoon + optioneel logo-upload. In de broncode van de
+ * vakantiepark-website-repo bevestigd: het contact-/offerteformulier
+ * upsert een Contact EN maakt een Deal aan in HubSpot (dus niet alleen
+ * "komt binnen", ook echt als nieuwe opportunity).
+ *
+ * Offertetemplate-generatie (opportunity -> offertetemplate met 1 klik) en
+ * de wekelijkse geautomatiseerde SEO/AEO-controle staan NIET in de
+ * vakantiepark-website-repo zelf — Mark bevestigde (28-09-2026) dat dit via
+ * zijn eigen "Jarvis"-automatiseringslaag loopt, buiten deze repo om.
+ * Daarom hier wel als functionaliteit vermeld, op zijn woord, ook al is het
+ * niet in code te verifiëren vanuit dit project.
+ *
+ * Moneybird-facturatiekoppeling: bevestigd NIET gebouwd, ook niet via
+ * Jarvis — Mark gaf zelf aan (28-09-2026) dat dit "nog volgt". Bewust NIET
+ * als functionaliteit vermeld totdat het echt gekoppeld is.
+ *
+ * NIET in de code aangetroffen (dus niet gebouwd): een
+ * 2D-ontwerpconfigurator, een agenda-koppeling (Cal.com).
  */
 export const caseStudies: CaseStudy[] = [
   {
@@ -51,15 +63,18 @@ export const caseStudies: CaseStudy[] = [
     problem:
       "Vakantieparken moesten voor merchandise vaak op meerdere plekken zoeken en telkens los contact opnemen om prijzen en mogelijkheden te bespreken. De wens was om dat te vereenvoudigen: alles op één plek kunnen regelen, in plaats van overal apart naar prijzen en opties te moeten vragen. Ook moesten bestellen makkelijker en de prijzen transparanter worden dan bij bestaande aanbieders.",
     solution:
-      "Een website met een productoverzicht waarin de prijzen per aantal direct zichtbaar zijn, een wensenlijst om producten te verzamelen, en een offerteformulier dat die volledige selectie in één keer als aanvraag verstuurt. Bij twijfel over de kwaliteit kan een vakantiepark eerst een samplebox bestellen, voordat er een grotere bestelling wordt geplaatst.",
+      "Een website met een productoverzicht waarin de prijzen per aantal direct zichtbaar zijn, een wensenlijst om producten te verzamelen, en een offerteformulier dat die volledige selectie in één keer als aanvraag verstuurt en direct als nieuwe opportunity in het CRM terechtkomt. Bij twijfel over de kwaliteit kan een vakantiepark eerst een samplebox bestellen, voordat er een grotere bestelling wordt geplaatst. Daar bovenop is een chatfunctie gekoppeld aan het CRM (berichten komen binnen in HubSpot en op de telefoon) en wordt de vindbaarheid van de site wekelijks automatisch gecontroleerd en geoptimaliseerd.",
     capabilities: [
       "Productoverzicht per categorie, met staffelprijzen per aantal direct zichtbaar, geen prijs hoeven opvragen",
       "Wensenlijst: producten verzamelen, bewaard per browser, blijft behouden tussen paginabezoeken",
       "Samplebox te bestellen bij twijfel over kwaliteit",
-      "Offerteformulier dat de samengestelde productlijst in één keer als aanvraag verstuurt, met naam, bedrijfsnaam, e-mail en telefoon",
+      "Offerteformulier dat de samengestelde productlijst in één keer als aanvraag verstuurt en direct als nieuwe opportunity in het CRM terechtkomt, met naam, bedrijfsnaam, e-mail en telefoon",
+      "Chatfunctie gekoppeld aan het CRM: berichten komen binnen in HubSpot en op de telefoon, zodat vragen overal beantwoord kunnen worden",
+      "Een nieuwe opportunity is met één druk op de knop om te zetten in een offertetemplate, dankzij de koppeling met de productdatabase",
+      "SEO/AEO wordt wekelijks automatisch gecontroleerd en geoptimaliseerd",
     ],
     result:
-      "Een vakantiepark regelt nu alles op één plek: assortiment bekijken, prijzen direct zien, eventueel eerst een samplebox aanvragen, en de hele selectie in één keer als offerteaanvraag versturen in plaats van dat steeds apart te moeten navragen.",
+      "Gemak voor de klant en voor Parkmade. Automatisering levert uren op om te ondernemen in plaats van administratie, en herhaaltaken worden foutloos in de juiste systemen gezet. Klanten krijgen snel antwoord en kunnen gemakkelijk bestellen, en Parkmade kan zich richten op dienstverlening.",
     image: "/cases/parkmade-desktop-v2.png",
   },
   {
