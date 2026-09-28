@@ -57,7 +57,7 @@ export const caseStudies: CaseStudy[] = [
     ],
     result:
       "Een bezoeker kan zelf een assortiment samenstellen en bewaren, en die selectie in één keer meesturen bij een aanvraag, in plaats van dat alles los per e-mail besproken moet worden.",
-    image: "/cases/parkmade-website-desktop.png",
+    image: "/cases/parkmade-desktop-v2.png",
   },
   {
     slug: "leanne-vis-coaching-website",
